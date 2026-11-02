@@ -1,0 +1,1476 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#08111e;--panel:#101e30;--panel2:#14263a;--line:rgba(164,205,226,.14);--text:#edf7fb;--muted:#9bb0c0;--cyan:#b58ae8;--cyan2:#dfc9ff;--orange:#d9b0ff;--pink:#ed8990;--green:#8ce0b8;--font:'DM Sans',sans-serif;--display:'Space Grotesk',sans-serif}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+.ambient{position:absolute;pointer-events:none;filter:blur(100px);opacity:.14;border-radius:50%;z-index:-1}
+.ambient-one{width:420px;height:420px;background:#76529f;top:80px;right:5%}
+.ambient-two{width:360px;height:360px;background:#c16a53;top:1250px;left:-180px}
+.section-wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.topbar{height:82px;padding:0 max(24px,calc((100% - 1160px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(8,17,30,.88);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:11px;font:700 17px var(--display);letter-spacing:.04em}
+.brand small{display:block;font:600 8px var(--font);letter-spacing:.19em;color:var(--muted);margin-top:1px}
+.brand-mark{height:37px;width:37px;border-radius:11px;background:linear-gradient(145deg,#d8c2f5,#8061a9);display:grid;place-items:center;color:#061523;font:700 23px var(--display);box-shadow:0 0 28px #b58ae833}
+.brand-dot{color:var(--cyan)}
+.nav-links{display:flex;gap:32px;color:#b2c4d0;font-size:13px}
+.nav-links a:hover,.text-button:hover{color:var(--cyan)}
+.nav-cta{font-size:12px;font-weight:700;color:var(--cyan);border:1px solid #b58ae855;border-radius:30px;padding:10px 16px}
+.nav-cta span{padding-left:8px}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:24px}
+.hero{min-height:620px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding-top:54px;padding-bottom:54px}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--cyan);margin-bottom:16px}
+.pulse-dot,.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:8px;box-shadow:0 0 12px #8ce0b8}
+.hero h1,.section-heading h2,.takeaway-inner h2{font:600 clamp(42px,5.4vw,68px)/1.08 var(--display);letter-spacing:-.055em;margin:0}
+.hero h1 em,.section-heading h2 em,.takeaway-inner h2 em{font-style:normal;color:var(--cyan)}
+.hero-description{max-width:530px;color:var(--muted);font-size:15px;line-height:1.85;margin:24px 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{border:1px solid transparent;padding:13px 18px;border-radius:8px;display:inline-flex;align-items:center;gap:16px;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.button-primary{background:var(--cyan);color:#06202a}
+.button-primary:hover{background:#e5d5ff;transform:translateY(-2px)}
+.button-ghost{border-color:var(--line);color:var(--text);background:#ffffff05}
+.button-ghost:hover{border-color:#b58ae888}
+.play-icon{font-size:19px}
+.hero-note{font-size:11px;color:#8199a9;margin-top:22px}
+.tiny-check{color:var(--green);margin-right:7px}
+.hero-art{height:520px;position:relative;display:grid;place-items:center}
+.hero-glow{position:absolute;width:310px;height:370px;background:#b58ae81c;filter:blur(60px);border-radius:50%}
+.orbit{position:absolute;border:1px solid #b58ae82c;border-radius:50%;transform:rotate(-23deg)}
+.orbit-a{width:420px;height:300px}
+.orbit-b{width:340px;height:470px;transform:rotate(28deg)}
+.hero-human{height:470px;z-index:1;filter:drop-shadow(0 0 30px #b58ae833)}
+.hero-human svg{height:100%;width:auto}
+.floating-label{position:absolute;z-index:2;font-size:9px;letter-spacing:.13em;color:#e6d7fa;background:#0d2030d9;border:1px solid #b58ae844;padding:8px 11px;border-radius:5px}
+.floating-label span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:7px}
+.label-kidney{top:39%;left:2%}
+.label-bladder{bottom:23%;right:2%}
+.label-skin{top:17%;right:0}
+.hero-caption{position:absolute;bottom:5px;color:#7893a5;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.intro-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#ffffff03;display:flex;justify-content:center;gap:clamp(40px,12vw,180px);padding:22px 20px}
+.intro-strip div{display:flex;align-items:center;gap:12px}
+.intro-strip strong{font:600 24px var(--display);color:var(--cyan)}
+.intro-strip span{font-size:11px;color:var(--muted)}
+.content-section{padding-top:115px;padding-bottom:110px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:44px}
+.section-heading h2,.takeaway-inner h2{font-size:clamp(37px,4.5vw,54px)}
+.section-heading>p{max-width:390px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 5px}
+.system-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.system-card{background:linear-gradient(145deg,#14263a,#0e1b2a);border:1px solid var(--line);border-radius:13px;padding:25px 27px;min-height:385px;transition:.25s}
+.system-card:hover{transform:translateY(-4px);border-color:#b58ae855}
+.card-topline{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#8ca7b7;font-weight:700}
+.card-icon{font-size:22px;color:var(--cyan)}
+.system-illustration{height:145px;display:grid;place-items:center;margin:8px 0 12px}
+.system-illustration svg{width:80%;height:100%;overflow:visible}
+.skin-illustration{filter:drop-shadow(0 8px 15px #e4a27a1a)}
+.kidney-illustration{filter:drop-shadow(0 8px 15px #e77e831a)}
+.system-card h3{font:600 21px var(--display);margin:0 0 9px}
+.system-card p{font-size:12px;color:var(--muted);line-height:1.8;max-width:480px;margin:0}
+.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin:19px 0}
+.tag-row span{font-size:9px;color:#a9c2d0;border:1px solid var(--line);padding:5px 8px;border-radius:30px}
+.text-button{background:none;border:0;padding:0;color:var(--cyan);font-size:11px;font-weight:700;cursor:pointer}
+.text-button span{margin-left:8px}
+.anatomy-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;margin-top:20px;background:#0e1b2a;border:1px solid var(--line);border-radius:13px;padding:27px 34px}
+.anatomy-visual{height:240px;border-radius:10px;background:radial-gradient(ellipse,#17445a 0%,#10283a 45%,#0c1a28 78%);display:grid;place-items:center;position:relative;overflow:hidden}
+.anatomy-visual:before{content:"";position:absolute;width:170px;height:220px;border:1px solid #b58ae82c;border-radius:50%}
+.anatomy-kidneys{position:relative;width:150px;height:175px}
+.kidney-shape{position:absolute;top:27px;width:46px;height:65px;background:linear-gradient(145deg,#f29b9c,#b94e6c);border:2px solid #ffc1bd;border-radius:55% 40% 55% 40%;transform:rotate(-18deg);box-shadow:0 0 24px #e77e8350}
+.kidney-shape:first-child{left:15px}
+.kidney-shape:nth-child(2){right:15px;transform:scaleX(-1) rotate(-18deg)}
+.ureter-line{position:absolute;top:85px;width:4px;height:65px;background:#b58ae8;border-radius:5px}
+.ureter-line.left{left:53px;transform:rotate(-7deg)}
+.ureter-line.right{right:53px;transform:rotate(7deg)}
+.bladder-shape{position:absolute;bottom:4px;left:58px;width:35px;height:39px;border-radius:45% 45% 55% 55%;background:#f5b16f;border:2px solid #ffdfb1}
+.anatomy-copy h3{font:600 24px var(--display);margin:0 0 8px}
+.anatomy-copy>p{color:var(--muted);font-size:12px;max-width:550px;margin:0 0 17px}
+.organ-buttons{display:flex;gap:7px;flex-wrap:wrap}
+.organ-chip{background:#14283a;border:1px solid var(--line);color:#b6cad5;border-radius:30px;padding:7px 11px;font-size:10px;cursor:pointer}
+.organ-chip.active,.organ-chip:hover{background:#1a4654;border-color:#b58ae8;color:#eadcff}
+.fact-line{display:flex;gap:9px;align-items:center;margin-top:20px;color:#92aebc;font-size:10px}
+.fact-icon{width:17px;height:17px;border:1px solid #b58ae877;color:var(--cyan);border-radius:50%;display:grid;place-items:center;font-size:10px;flex-shrink:0}
+.scanner-section{padding:105px 0;background:linear-gradient(180deg,#0d1b2a,#0a1725);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scanner-heading{margin-bottom:38px}
+.scanner-layout{display:grid;grid-template-columns:1.45fr .8fr;gap:17px}
+.camera-card,.scanner-info{background:#101f30;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.camera-toolbar{height:48px;display:flex;justify-content:space-between;align-items:center;padding:0 17px;font-size:9px;font-weight:700;letter-spacing:.13em;color:#9db6c5;border-bottom:1px solid var(--line)}
+.camera-toolbar>span:last-child{letter-spacing:0;font-weight:500;color:#8ca5b5}
+.camera-stage{height:400px;background:radial-gradient(ellipse at center,#302344,#091421 75%);position:relative;overflow:hidden;display:grid;place-items:center}
+.camera-stage video,.camera-stage canvas{position:absolute;width:100%;height:100%;object-fit:contain;transform:scaleX(-1)}
+.camera-stage video{display:none}
+.camera-stage.active video{display:block}
+.camera-stage canvas{z-index:2;pointer-events:none}
+.camera-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;text-align:center;padding:20px;z-index:1}
+.camera-placeholder-icon{width:65px;height:65px;border:1px solid #b58ae855;border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-size:35px;box-shadow:0 0 35px #b58ae81a}
+.camera-placeholder strong{font:600 14px var(--display)}
+.camera-placeholder span{font-size:10px;color:#8fa8b7;max-width:270px}
+.camera-stage.active .camera-placeholder{display:none}
+.scan-guide{position:absolute;inset:20px;z-index:3;display:none;justify-content:space-between;flex-direction:column;pointer-events:none;color:#d7c5f2;font-size:8px;letter-spacing:.17em}
+.camera-stage.active .scan-guide{display:flex}
+.camera-controls{display:flex;gap:9px;padding:16px 17px 6px}
+.camera-controls .button{padding:10px 14px;font-size:10px}
+.button:disabled{opacity:.35;cursor:not-allowed}
+.privacy-note,.status-message{padding:0 17px;color:#8099a9;font-size:9px}
+.privacy-note{margin:8px 0}
+.status-message{margin:8px 0 16px;color:var(--cyan)}
+.scanner-info{padding:17px}
+.scanner-info-header{display:flex;align-items:center;justify-content:space-between}
+.scanner-info-header .eyebrow{margin:0}
+.guide-status{font-size:8px;letter-spacing:.12em;color:#8ca5b5;border:1px solid var(--line);padding:5px 7px;border-radius:4px}
+.body-guide{margin-top:5px;background:radial-gradient(ellipse,#302344,#101f30 70%);border-radius:9px;padding:5px}
+.body-guide svg{width:100%;height:320px}
+.guide-organ{fill:#e9828b;stroke:#ffc0c1;stroke-width:2;filter:drop-shadow(0 0 5px #f08b9b66)}
+.guide-organ.ureter,.guide-organ.urethra{fill:none;stroke:#c5a6f2;stroke-width:5;stroke-linecap:round}
+.guide-organ.bladder{fill:#f2ae70;stroke:#ffdbad}
+.sweat-dots circle{fill:#b58ae8;filter:drop-shadow(0 0 4px #b58ae8)}
+.guide-legend{display:flex;flex-wrap:wrap;gap:9px 13px;padding:0 9px 11px;color:#91aab8;font-size:8px}
+.guide-legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
+.legend-kidney{background:#e9828b}
+.legend-urine{background:#c5a6f2}
+.legend-sweat{background:#b58ae8}
+.guide-description{padding:13px 2px}
+.guide-description strong{font:600 13px var(--display)}
+.guide-description p{font-size:10px;color:#92a9b8;line-height:1.65;margin:5px 0}
+.scanner-select{border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#a9bdc8}
+.scanner-select select,.sim-system-toggle select{background:#142b3d;border:1px solid var(--line);border-radius:5px;color:#dcecf2;padding:7px 9px;font-size:10px}
+.scanner-disclaimer{margin-top:14px;color:#829aa9;font-size:9px;line-height:1.6}
+.scanner-disclaimer:before{content:"ⓘ";color:var(--orange);margin-right:7px}
+.simulator-card{display:grid;grid-template-columns:.82fr 1.5fr;background:#101f30;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.sim-controls{padding:23px 17px;border-right:1px solid var(--line)}
+.sim-controls>.eyebrow{margin:0 0 14px 8px}
+.condition-button{width:100%;display:flex;align-items:center;gap:11px;text-align:left;background:transparent;border:1px solid transparent;border-radius:8px;color:var(--text);padding:11px 9px;cursor:pointer;transition:.2s}
+.condition-button:hover,.condition-button.active{background:#1a3447;border-color:#b58ae833}
+.condition-number{font:600 11px var(--display);color:#6e8b9d}
+.condition-button.active .condition-number{color:var(--cyan)}
+.condition-button span:nth-child(2){flex:1}
+.condition-button strong{display:block;font-size:10px}
+.condition-button small{display:block;color:#8ba4b3;font-size:9px;margin-top:3px}
+.condition-button b{color:#5d7e91;font-weight:400}
+.condition-button.active b{color:var(--cyan)}
+.sim-system-toggle{border-top:1px solid var(--line);margin-top:12px;padding:15px 7px 0;display:flex;flex-direction:column;gap:7px;font-size:10px;color:#9eb3bf}
+.sim-system-toggle select{width:100%}
+.sim-display{padding:23px 25px}
+.sim-display-top{display:flex;justify-content:space-between;align-items:center}
+.sim-display-top .eyebrow{margin:0}
+.sim-state{font-size:8px;letter-spacing:.12em;color:var(--green);border:1px solid #8ce0b844;padding:5px 8px;border-radius:20px}
+.sim-visual{height:290px;background:radial-gradient(ellipse,#302344,#0c1a29 75%);border-radius:9px;margin:16px 0;display:grid;place-items:center;overflow:hidden}
+.sim-visual svg{height:100%;width:100%;max-width:560px}
+.torso-outline{fill:#d6f0f5;fill-opacity:.07;stroke:#cdb3ef;stroke-opacity:.5;stroke-width:2}
+.sim-kidney{fill:#d66d7d;stroke:#ffc0bd;stroke-width:2;filter:drop-shadow(0 0 7px #ed899055)}
+.sim-ureter,.sim-urethra{fill:none;stroke:#b58ae8;stroke-width:5;stroke-linecap:round}
+.sim-bladder{fill:#f0a96d;stroke:#ffdab0;stroke-width:2}
+.flow-particles circle{fill:#e5d5ff;filter:drop-shadow(0 0 5px #e5d5ff);animation:flow 2s infinite ease-in-out}
+.flow-particles circle:nth-child(2){animation-delay:.65s}
+.flow-particles circle:nth-child(3){animation-delay:1.3s}
+@keyframes flow{0%{opacity:.2;transform:translateY(-13px)}
+50%{opacity:1}
+100%{opacity:.2;transform:translateY(13px)}
+}
+.svg-label{fill:#8db5c5;font:9px var(--font);letter-spacing:2px}
+.sim-kidney.affected{fill:#8f5267;filter:drop-shadow(0 0 8px #e75d6a)}
+.sim-visual.infection .sim-kidney,.sim-visual.infection .sim-bladder{filter:drop-shadow(0 0 9px #e75d6a)}
+.sim-visual.obstruction .sim-ureter{stroke:#ff9a71;stroke-dasharray:4 5}
+.sim-visual.decreased .sim-kidney{fill:#96677c;opacity:.75}
+.sim-explanation{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.sim-explanation h3{font:600 18px var(--display);margin:0 0 7px}
+.sim-explanation p{font-size:10px;color:#9bb0bf;line-height:1.75;margin:0}
+.steps-list{display:flex;flex-direction:column;gap:7px}
+.step-item{display:flex;align-items:flex-start;gap:8px;color:#a9bfca;font-size:9px}
+.step-item span{width:17px;height:17px;border-radius:50%;background:#39294f;color:var(--cyan);display:grid;place-items:center;flex-shrink:0;font-size:8px}
+.sim-footnote{font-size:9px;color:#708b9b;border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+.hidden{display:none!important}
+.takeaway-section{background:linear-gradient(110deg,#102b3b,#112337);border-top:1px solid #b58ae822;border-bottom:1px solid #b58ae822;padding:85px 0}
+.takeaway-inner{display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
+.takeaway-inner h2{font-size:clamp(35px,4vw,49px)}
+.takeaway-copy p{font-size:13px;color:#a9bdc8;line-height:1.9;margin:0 0 20px}
+.footer{min-height:100px;width:min(1160px,calc(100% - 48px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer>span{font-size:9px;color:#71899a}
+.footer .brand{font-size:14px}
+.footer .brand-mark{width:31px;height:31px;font-size:19px}
+
+@media(max-width:850px){.nav-links{gap:15px}
+.hero{grid-template-columns:1fr .8fr}
+.hero-art{transform:scale(.9)}
+.scanner-layout{grid-template-columns:1fr}
+.scanner-info{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.scanner-info-header,.scanner-select{grid-column:1/-1}
+.body-guide svg{height:280px}
+.simulator-card{grid-template-columns:1fr}
+.sim-controls{border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.sim-controls>.eyebrow,.sim-system-toggle{grid-column:1/-1}
+.condition-button{padding:9px 7px}
+.sim-explanation{gap:15px}
+}
+
+@media(max-width:620px){.section-wrap{width:calc(100% - 34px)}
+.topbar{height:68px;padding:0 17px}
+.menu-toggle{display:block;margin-left:auto;margin-right:15px}
+.nav-links{display:none;position:absolute;top:67px;left:0;right:0;background:#0c1b2a;padding:18px;flex-direction:column;border-bottom:1px solid var(--line)}
+.nav-links.open{display:flex}
+.nav-cta{font-size:10px;padding:8px 10px}
+.hero{grid-template-columns:1fr;padding-top:75px;min-height:auto}
+.hero h1{font-size:48px}
+.hero-art{height:390px;margin-top:20px;transform:none}
+.hero-human{height:360px}
+.orbit-a{width:320px;height:230px}
+.orbit-b{width:260px;height:380px}
+.label-kidney{left:0}
+.label-skin{right:0}
+.intro-strip{gap:18px;justify-content:space-around}
+.intro-strip div{gap:6px;flex-direction:column;text-align:center}
+.intro-strip strong{font-size:21px}
+.intro-strip span{font-size:9px}
+.content-section,.scanner-section{padding-top:75px;padding-bottom:75px}
+.section-heading{display:block;margin-bottom:30px}
+.section-heading>p{margin-top:18px}
+.system-grid{grid-template-columns:1fr}
+.system-card{min-height:0}
+.anatomy-panel{grid-template-columns:1fr;padding:18px;gap:20px}
+.anatomy-visual{height:210px}
+.camera-stage{height:310px}
+.scanner-info{display:block}
+.body-guide svg{height:280px}
+.sim-controls{grid-template-columns:1fr}
+.sim-controls>.eyebrow,.sim-system-toggle{grid-column:auto}
+.sim-display{padding:17px}
+.sim-visual{height:235px}
+.sim-explanation{grid-template-columns:1fr}
+.takeaway-inner{grid-template-columns:1fr;gap:22px}
+.takeaway-section{padding:65px 0}
+.footer{width:calc(100% - 34px);padding:20px 0;align-items:flex-start;flex-direction:column}
+.footer>span{line-height:1.6}
+}
+
+/* Research notes and scanner condition controls */
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}
+.research-grid article{background:#102235;border:1px solid var(--line);border-radius:10px;padding:19px}
+.research-grid .eyebrow{font-size:8px;color:var(--cyan);letter-spacing:.14em}
+.research-grid h3{font:600 16px var(--display);margin:10px 0 7px}
+.research-grid p{font-size:10px;color:#9bb0bf;line-height:1.75;margin:0}
+.condition-select{margin-top:10px}
+.scanner-condition-note{padding:11px 10px;border:1px solid #b58ae826;border-radius:7px;background:#122a3b;color:#a9c4cf;font-size:9px;line-height:1.65}
+.scanner-condition-note strong{color:#eafaff}
+.camera-stage:after{content:"SIMULATED ANATOMY · NOT A MEDICAL SCAN";position:absolute;z-index:4;right:12px;bottom:10px;color:#b7dbe2;background:#071522b8;border:1px solid #b58ae844;border-radius:4px;padding:6px 8px;font-size:7px;letter-spacing:.12em;pointer-events:none}
+.camera-stage:not(.active):after{display:none}
+
+@media(max-width:850px){.research-grid{grid-template-columns:1fr 1fr}
+.condition-select{grid-column:1/-1}
+.scanner-condition-note{grid-column:1/-1}
+}
+
+@media(max-width:620px){.research-grid{grid-template-columns:1fr}
+}
+
+/* Detailed renal anatomy in the pathway simulator */
+.sim-kidney{fill:url(#renalShell);stroke:#ffd0c7;stroke-width:2.5;filter:drop-shadow(0 0 7px #bd82c655)}
+.kidney-cortex{fill:none;stroke:#f6c3b0;stroke-width:5;opacity:.9}
+.kidney-medulla{fill:#873d5d;stroke:#d88a91;stroke-width:1.2}
+.renal-pelvis{fill:none;stroke:#f4c27e;stroke-width:5;stroke-linecap:round}
+.sim-ureter{fill:none;stroke:#8c6ba8;stroke-width:9;stroke-linecap:round}
+.sim-ureter-inner{fill:none;stroke:#c4a4ed;stroke-width:3;stroke-linecap:round}
+.bladder-fluid{fill:#c4a4ed;opacity:.58}
+.sim-visual.kidney-infection .sim-kidney,.sim-visual.acute .sim-kidney{filter:drop-shadow(0 0 10px #ed8990);stroke:#ff9a9e}
+.sim-visual.glomerular .kidney-medulla{fill:#d46b82}
+.sim-visual.retention .sim-bladder{filter:drop-shadow(0 0 10px #ffbf76);stroke:#ffbf76}
+.anatomy-visual svg{width:100%;height:100%;max-height:260px;overflow:visible}
+.anatomy-visual{display:grid;place-items:center;min-height:230px}
+
+/* Calm rose-and-lilac visual system */
+:root{
+  --bg:#f7f1f6;--panel:#fffafd;--panel2:#f0e6f1;--line:rgba(112,79,112,.18);
+  --text:#382b3d;--muted:#776879;--cyan:#986b9d;--cyan2:#c9a9cc;
+  --orange:#c98b9d;--pink:#c77d98;--green:#789b89;
+}
+body{background:var(--bg);color:var(--text)}
+.ambient{display:none}
+.topbar{background:rgba(250,246,250,.96);backdrop-filter:none;border-bottom-color:var(--line)}
+.brand-mark{background:#e8d6e9;color:#604568;box-shadow:none}
+.brand small,.nav-links,.nav-cta{color:#78627d}
+.nav-cta{border-color:#cdb7d0}
+.nav-links a:hover,.text-button:hover{color:#805486}
+.hero h1 em,.section-heading h2 em,.takeaway-inner h2 em{color:#91699a}
+.hero-description,.section-heading>p,.system-card p,.anatomy-copy>p{color:#756779}
+.hero-note,.footer>span{color:#897b8b}
+.pulse-dot,.live-dot{background:#8aa995;box-shadow:none}
+.button-primary{background:#9b739f;color:#fff}
+.button-primary:hover{background:#88628e}
+.button-ghost{border-color:#d8c9d9;color:#55435a;background:#fff9}
+.hero-art .hero-glow{display:none}
+.orbit{border-color:#c7a9ca}
+.hero-human{filter:none}
+.floating-label{color:#624b69;background:#fffafd;border-color:#d9c4dc}
+.floating-label span{background:#a67eaa}
+.intro-strip{background:#f1e8f2;border-color:#e1d3e2}
+.intro-strip strong{color:#8e6995}
+.intro-strip span{color:#756779}
+.system-card,.anatomy-panel,.camera-card,.scanner-info,.simulator-card,.lesson-card{
+  background:#fffafd;border-color:#e4d7e5;box-shadow:0 8px 24px rgba(87,59,91,.045)
+}
+.system-card:hover{border-color:#c5a3c9}
+.card-topline,.guide-legend{color:#88758a}
+.card-icon,.eyebrow,.text-button{color:#91699a}
+.tag-row span{color:#755d7b;border-color:#e2d5e4}
+.anatomy-visual,.camera-stage,.body-guide,.sim-visual{
+  background:#f1e8f2
+}
+.anatomy-visual:before{border-color:#d7c3d9}
+.organ-chip{background:#f5edf5;border-color:#e3d5e4;color:#705c75}
+.organ-chip.active,.organ-chip:hover{background:#eadced;border-color:#a985af;color:#5d4264}
+.fact-line,.fact-icon{color:#806c84}
+.fact-icon{border-color:#c9b1cd}
+.scanner-section{background:#f1e9f2;border-color:#e1d4e3}
+.camera-toolbar{color:#715e76}
+.camera-toolbar>span:last-child,.guide-description p,.scanner-disclaimer{color:#7c6d80}
+.camera-placeholder-icon{border-color:#c9b1cd;color:#956e9c;box-shadow:none}
+.camera-placeholder span{color:#806f84}
+.scan-guide{color:#71557a}
+.privacy-note{color:#827487}
+.status-message{color:#8f6998}
+.guide-status{color:#78677b;border-color:#dfd1e1}
+.guide-organ{filter:none}
+.guide-organ.ureter,.guide-organ.urethra{stroke:#9872a1}
+.guide-organ.bladder{fill:#d9a17f;stroke:#f1c7a9}
+.sweat-dots circle{fill:#a985b1;filter:none}
+.guide-legend i{box-shadow:none}
+.scanner-select{color:#6e5d73;border-color:#e3d7e4}
+.scanner-select select,.sim-system-toggle select{background:#f7f0f7;border-color:#dfd1e1;color:#57465d}
+.scanner-disclaimer:before{color:#a67eaa}
+.sim-controls{border-color:#e3d7e4}
+.condition-button{color:#514255}
+.condition-button:hover,.condition-button.active{background:#f1e7f2;border-color:#d7c3da}
+.condition-number{color:#a28ba5}
+.condition-button.active .condition-number,.condition-button.active b{color:#8d6695}
+.condition-button small{color:#88798b}
+.sim-state{color:#678a77;border-color:#c5d9cb}
+.sim-visual{background:#f2eaf2}
+.torso-outline{fill:#d9c8dd;fill-opacity:.18;stroke:#b89cbd;stroke-opacity:.7}
+.sim-kidney{filter:none}
+.flow-particles circle{filter:none}
+.step-item{color:#66576b}
+.step-item span{background:#eee1ef;color:#8d6695}
+.sim-explanation p,.sim-footnote{color:#786a7d}
+.sim-footnote{border-color:#e5d9e6}
+.takeaway-section{background:#eadfeb;border-color:#dfcfe1}
+.takeaway-copy p{color:#6e5d72}
+.footer .brand-mark{background:#e8d6e9;color:#604568}
+.footer .brand small{color:#78627d}
+.learning-section{padding-top:100px;padding-bottom:100px}
+.learning-alt{background:#f1e8f2;border-top:1px solid #e4d7e5;border-bottom:1px solid #e4d7e5;max-width:none;padding-left:max(24px,calc((100% - 1160px)/2));padding-right:max(24px,calc((100% - 1160px)/2))}
+.lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.lesson-card{padding:24px 25px;border:1px solid #e4d7e5;border-radius:12px}
+.lesson-number{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#efe2f0;color:#8e6995;font:600 12px var(--display);margin-bottom:12px}
+.lesson-card h3{font:600 19px var(--display);margin:0 0 9px;color:#49384e}
+.lesson-card p,.lesson-card li{font-size:12px;line-height:1.8;color:#756779}
+.lesson-card p{margin:0 0 10px}
+.lesson-card ul,.lesson-card ol{padding-left:19px;margin:8px 0 0}
+.lesson-card li{margin:4px 0}
+.lesson-card b{color:#5e4664}
+.presentation-note{margin-top:18px;padding:18px 20px;border:1px solid #d9c6dc;border-radius:10px;background:#faf5fa;color:#6d5a72;font-size:12px;line-height:1.8}
+.presentation-note b{color:#805786}
+.camera-stage video,.camera-stage canvas{transform:none}
+@media(max-width:850px){.lesson-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.learning-section{padding-top:70px;padding-bottom:70px}.learning-alt{padding-left:17px;padding-right:17px}.lesson-card{padding:20px}.nav-links{background:#fffafd;border-color:#e4d7e5}.sim-controls{border-color:#e3d7e4}}
+/* GROUP 5 presentation theme: deep plum, violet and soft lavender */
+:root{
+  --ink:#f4edf9;
+  --muted:#c4b5d1;
+  --paper:#171020;
+  --surface:#21172d;
+  --line:#463354;
+  --accent:#b88adf;
+}
+
+html{scroll-behavior:auto}
+
+body{
+  background:#140d1d;
+  color:#f4edf9;
+}
+
+.ambient{display:none!important}
+
+.topbar{
+  background:rgba(20,13,29,.96);
+  border-bottom:1px solid #382746;
+  color:#f4edf9;
+}
+
+.brand,.nav-links a{color:#eee3f6}
+
+.brand small{color:#b6a3c5}
+
+.nav-links a:hover,.nav-links a:focus{color:#d5b5f2}
+
+.nav-cta{background:#8d5fba;color:#fff}
+
+main{
+  height:calc(100vh - 76px);
+  overflow:hidden;
+  position:relative;
+}
+
+main>section{
+  display:none;
+  height:100%;
+  min-height:0;
+  max-height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  box-sizing:border-box;
+  padding-top:clamp(28px,5vh,58px);
+  padding-bottom:110px;
+  background:#171020;
+  color:#f4edf9;
+}
+
+main>section.active-slide{display:block;animation:slideIn .28s ease both}
+
+main>section.intro-strip.active-slide{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(28px,7vw,110px);
+  flex-wrap:wrap;
+  padding:40px;
+  background:#21172d;
+}
+
+@keyframes slideIn{
+  from{opacity:.55;transform:translateY(9px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.section-wrap{max-width:1180px}
+
+.hero{align-items:center}
+
+.hero h1,.section-heading h2,.takeaway-copy h2{color:#f7efff}
+
+.hero h1 em,.section-heading h2 em{color:#c49be8}
+
+.hero-description,.section-heading>p,.takeaway-copy p{color:#c4b5d1}
+
+.eyebrow,.card-topline,.card-icon,.text-button{color:#c49be8}
+
+.hero-note{color:#b6a3c5}
+
+.button-primary{background:#8d5fba;color:#fff;border-color:#8d5fba}
+
+.button-primary:hover{background:#a477ce}
+
+.button-ghost{background:#281d35;border-color:#59436b;color:#eadcf5}
+
+.hero-art .hero-glow{display:none}
+
+.orbit{border-color:#684c80}
+
+.hero-human{filter:none}
+
+.floating-label{background:#291d36;color:#e8d9f2;border-color:#634b78}
+
+.floating-label span{background:#c49be8}
+
+.intro-strip{background:#21172d;border-color:#443052}
+
+.intro-strip strong{color:#d2afeF}
+
+.intro-strip span{color:#c4b5d1}
+
+.system-card,.anatomy-panel,.camera-card,.scanner-info,.simulator-card,.lesson-card{
+  background:#21172d;
+  border-color:#493657;
+  color:#f4edf9;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.system-card:hover{border-color:#9a72bc}
+
+.system-card h3,.lesson-card h3,.anatomy-copy h3{color:#f2e7fa}
+
+.system-card p,.lesson-card p,.lesson-card li,.guide-description p,.sim-explanation p{color:#c4b5d1}
+
+.tag-row span{color:#d5c2e2;border-color:#574166;background:#2a1e36}
+
+.anatomy-visual,.camera-stage,.body-guide,.sim-visual{background:#1a1224}
+
+.anatomy-visual:before{border-color:#59436b}
+
+.organ-chip{background:#2a1e36;border-color:#574166;color:#d8c7e5}
+
+.organ-chip.active,.organ-chip:hover{background:#49315e;border-color:#b38ad6;color:#fff}
+
+.fact-line,.fact-icon{color:#d4c1e2}
+
+.fact-icon{border-color:#74578b}
+
+.scanner-section{background:#1b1326;border-color:#443052}
+
+.camera-toolbar{color:#e4d4ef}
+
+.camera-toolbar>span:last-child,.scanner-disclaimer{color:#b6a3c5}
+
+.camera-placeholder strong{color:#eee3f6}
+
+.camera-placeholder span{color:#b6a3c5}
+
+.camera-placeholder-icon{border-color:#74578b;color:#c49be8;box-shadow:none}
+
+.scan-guide{color:#d5b5f2}
+
+.privacy-note,.status-message{color:#c4b5d1}
+
+.guide-status{color:#d2c2df;border-color:#59436b}
+
+.guide-organ{filter:none}
+
+.guide-organ.ureter,.guide-organ.urethra{stroke:#c49be8}
+
+.guide-organ.bladder{fill:#e6a36f;stroke:#ffd1a7}
+
+.guide-legend{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px 14px;
+  color:#d8c7e5;
+  font-size:11px;
+}
+
+.guide-legend i{box-shadow:none}
+
+.legend-vessel{background:#d66f83}
+
+.legend-context{background:#9b83b6}
+
+.scanner-select{color:#d8c7e5;border-color:#493657}
+
+.scanner-select select,.sim-system-toggle select{
+  background:#2a1e36;
+  border-color:#59436b;
+  color:#f4edf9;
+}
+
+.scanner-disclaimer:before{color:#c49be8}
+
+.sim-controls{border-color:#493657}
+
+.condition-button{color:#e8d9f2}
+
+.condition-button:hover,.condition-button.active{background:#342442;border-color:#8d68a8}
+
+.condition-number{color:#b99acb}
+
+.condition-button.active .condition-number,.condition-button.active b{color:#d2aff0}
+
+.condition-button small{color:#b6a3c5}
+
+.sim-state{color:#b9dfc8;border-color:#567b66}
+
+.sim-visual{background:#1a1224}
+
+.torso-outline{fill:#bda5ce;fill-opacity:.12;stroke:#8c70a4;stroke-opacity:.8}
+
+.sim-kidney{filter:none}
+
+.flow-particles circle{filter:none}
+
+.step-item{color:#d8c7e5}
+
+.step-item span{background:#3a2949;color:#d2aff0}
+
+.sim-explanation p,.sim-footnote{color:#c4b5d1}
+
+.sim-footnote{border-color:#493657}
+
+.takeaway-section{background:#21172d;border-color:#443052}
+
+.footer .brand-mark{background:#49315e;color:#f4edf9}
+
+.footer .brand small{color:#c4b5d1}
+
+.lesson-card{padding:24px;border-radius:16px}
+
+.lesson-number{background:#49315e;color:#e1c5fa}
+
+.lesson-card h3{font-size:20px}
+
+.lesson-card p,.lesson-card li{font-size:13px;line-height:1.65}
+
+.presentation-note{display:none!important}
+
+.camera-stage video,.camera-stage canvas{transform:none}
+
+.slide-dock{
+  position:fixed;
+  z-index:50;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:10px 14px;
+  border:1px solid #59436b;
+  border-radius:16px;
+  background:rgba(33,23,45,.96);
+  box-shadow:0 12px 36px rgba(0,0,0,.35);
+  color:#eadcf5;
+  backdrop-filter:blur(12px)
+}
+
+.slide-dock button{
+  width:38px;
+  height:38px;
+  border:1px solid #72568a;
+  border-radius:11px;
+  background:#49315e;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer
+}
+
+.slide-dock button:disabled{opacity:.35;cursor:not-allowed}
+
+#slideCounter{
+  font:600 11px 'DM Sans',sans-serif;
+  letter-spacing:.12em;
+  white-space:nowrap
+}
+
+.slide-progress{
+  width:clamp(55px,10vw,130px);
+  height:4px;
+  border-radius:9px;
+  background:#493657;
+  overflow:hidden
+}
+
+.slide-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:#c49be8;
+  transition:width .25s ease
+}
+
+main>section::-webkit-scrollbar{width:7px}
+
+main>section::-webkit-scrollbar-thumb{background:#59436b;border-radius:9px}
+
+#bodyGuideSvg{width:100%;max-height:490px;overflow:visible}
+
+#bodyGuideSvg text{
+  paint-order:stroke;
+  stroke:#1a1224;
+  stroke-width:2px;
+  stroke-linejoin:round
+}
+
+#bodyGuideSvg path{vector-effect:non-scaling-stroke}
+
+@media(max-width:850px){
+  main{height:calc(100vh - 66px)}
+  main>section{padding-left:18px;padding-right:18px}
+  .slide-dock{bottom:10px}
+}
+
+@media(max-width:620px){
+  .topbar{padding-left:14px;padding-right:14px}
+  .brand{font-size:11px}
+  .brand small{font-size:8px}
+  .slide-dock{gap:9px;padding:8px 10px}
+  .slide-dock button{width:34px;height:34px}
+  .guide-legend{grid-template-columns:1fr}
+}
+
+/* Keep the footer from appearing as an extra scroll page outside the slide deck. */
+.footer{display:none!important}
+
+/* Individual teaching-topic slides */
+main>section.topic-slide{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:24px;
+  padding:clamp(24px,5vh,58px) 24px 100px;
+}
+
+main>section.topic-slide.active-slide{display:flex}
+
+.topic-slide-heading{width:min(900px,100%);text-align:center}
+
+.topic-slide-heading .eyebrow{margin-bottom:12px}
+
+.topic-slide-heading h2{
+  margin:0;
+  color:#f4eafa;
+  font:600 clamp(27px,4vw,42px) 'Space Grotesk',sans-serif;
+  letter-spacing:-.04em
+}
+
+.topic-slide .lesson-card{
+  width:min(900px,100%);
+  box-sizing:border-box;
+  padding:clamp(24px,4vw,42px);
+  border-radius:20px
+}
+
+.topic-slide .lesson-number{width:42px;height:42px;font-size:14px}
+
+.topic-slide .lesson-card h3{font-size:clamp(20px,2.4vw,27px)}
+
+.topic-slide .lesson-card p,.topic-slide .lesson-card li{
+  font-size:clamp(13px,1.25vw,16px);
+  line-height:1.75
+}
+
+.topic-slide .lesson-card li{margin:7px 0}
+
+/* Clear, always-visible slide controls */
+.slide-dock{
+  z-index:9999!important;
+  min-height:56px;
+  max-width:calc(100vw - 24px);
+  box-sizing:border-box;
+}
+
+.slide-dock button{
+  width:auto!important;
+  min-width:104px;
+  padding:0 14px;
+  white-space:nowrap;
+  font:700 10px 'DM Sans',sans-serif;
+  letter-spacing:.08em;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+
+.slide-dock button:disabled{opacity:.35;cursor:not-allowed}
+
+@media(max-width:620px){
+  .slide-dock{gap:8px;bottom:10px}
+  .slide-dock button{min-width:76px;padding:0 8px;font-size:9px}
+  .slide-progress{width:42px}
+}
+/* ================================
+   PRESENTATION MODE
+================================ */
+
+main {
+  height: calc(100vh - 82px);
+  overflow: hidden;
+  position: relative;
+}
+
+main > section {
+  display: none;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-top: clamp(28px, 5vh, 58px);
+  padding-bottom: 110px;
+  background: #171020;
+  color: #f4edf9;
+}
+
+main > section.active-slide {
+  display: block;
+  animation: slideIn .28s ease both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: .55;
+    transform: translateY(9px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Individual lesson slides */
+
+main > section.topic-slide {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  padding: clamp(24px, 5vh, 58px) 24px 100px;
+}
+
+main > section.topic-slide.active-slide {
+  display: flex;
+}
+
+.topic-slide-heading {
+  width: min(900px, 100%);
+  text-align: center;
+}
+
+.topic-slide-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.topic-slide-heading h2 {
+  margin: 0;
+  color: #f4eafa;
+  font: 600 clamp(27px, 4vw, 42px) 'Space Grotesk', sans-serif;
+  letter-spacing: -.04em;
+}
+
+.topic-slide .lesson-card {
+  width: min(900px, 100%);
+  box-sizing: border-box;
+  padding: clamp(24px, 4vw, 42px);
+  border-radius: 20px;
+}
+
+.topic-slide .lesson-number {
+  width: 42px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.topic-slide .lesson-card h3 {
+  font-size: clamp(20px, 2.4vw, 27px);
+}
+
+.topic-slide .lesson-card p,
+.topic-slide .lesson-card li {
+  font-size: clamp(13px, 1.25vw, 16px);
+  line-height: 1.75;
+}
+
+.topic-slide .lesson-card li {
+  margin: 7px 0;
+}
+
+/* Slide navigation dock */
+
+.slide-dock {
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border: 1px solid #59436b;
+  border-radius: 16px;
+  background: rgba(33, 23, 45, .97);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .35);
+  color: #eadcf5;
+  backdrop-filter: blur(12px);
+  min-height: 56px;
+  max-width: calc(100vw - 24px);
+  box-sizing: border-box;
+}
+
+.slide-dock button {
+  min-width: 90px;
+  padding: 0 14px;
+  height: 38px;
+  border: 1px solid #72568a;
+  border-radius: 11px;
+  background: #49315e;
+  color: white;
+  font: 700 10px 'DM Sans', sans-serif;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.slide-dock button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+#slideCounter {
+  font: 600 11px 'DM Sans', sans-serif;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.slide-progress {
+  width: clamp(55px, 10vw, 130px);
+  height: 4px;
+  border-radius: 9px;
+  background: #493657;
+  overflow: hidden;
+}
+
+.slide-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #c49be8;
+  transition: width .25s ease;
+}
+
+/* Scrollbar */
+
+main > section::-webkit-scrollbar {
+  width: 7px;
+}
+
+main > section::-webkit-scrollbar-thumb {
+  background: #59436b;
+  border-radius: 9px;
+}
+
+/* Hide the normal page footer during presentation */
+
+.footer {
+  display: none !important;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 850px) {
+  main {
+    height: calc(100vh - 82px);
+  }
+
+  main > section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .slide-dock {
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 620px) {
+  .slide-dock {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .slide-dock button {
+    min-width: 65px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
+  .slide-progress {
+    width: 42px;
+  }
+
+  .topic-slide {
+    gap: 16px;
+  }
+}
+
+/* Rebuild additions: plant comparison and resilient webcam preview */
+.camera-stage.active video{display:block;z-index:1}
+.camera-stage.active canvas{z-index:2}
+.camera-stage video{background:#090d16}
+.plant-section{padding-top:100px;padding-bottom:100px}
+.plant-intro-card{display:grid;grid-template-columns:minmax(190px,.7fr) 1.3fr;gap:28px;align-items:center;padding:28px;border:1px solid #e3d6e7;border-radius:14px;background:linear-gradient(135deg,#f7f0f7,#f1f4ed);margin:26px 0}
+.plant-visual{height:245px;position:relative;overflow:hidden;border-radius:12px;background:radial-gradient(ellipse at 50% 38%,#d8e8cf,#eef1e7 70%);min-width:0}
+.plant-stem{position:absolute;width:7px;height:155px;left:50%;top:48px;background:#648d5d;border-radius:8px;transform:translateX(-50%)}
+.plant-leaf{position:absolute;width:82px;height:43px;background:linear-gradient(135deg,#8ebd78,#477c56);border-radius:100% 0 100% 0;top:82px}
+.leaf-one{left:calc(50% - 82px);transform:rotate(8deg)}.leaf-two{left:50%;top:119px;transform:scaleX(-1) rotate(8deg)}
+.plant-root{position:absolute;left:50%;top:190px;width:110px;height:48px;border-top:3px solid #9b7b56;transform:translateX(-50%);border-radius:50%}
+.plant-root:before,.plant-root:after{content:"";position:absolute;top:-2px;width:2px;height:45px;background:#9b7b56;transform-origin:top}.plant-root:before{left:30px;transform:rotate(25deg)}.plant-root:after{right:30px;transform:rotate(-25deg)}
+.plant-label{position:absolute;font:700 9px var(--display);letter-spacing:.1em;color:#4b684b}.label-stomata{right:12px;top:78px}.label-roots{left:12px;bottom:18px}
+.plant-tag{font:700 9px var(--display);letter-spacing:.16em;color:#64845c}.plant-intro-copy h3{font:600 25px var(--display);color:#403c49;margin:9px 0}.plant-intro-copy p{font-size:13px;line-height:1.8;color:#6f6874}.plant-note{padding:12px 14px;background:#fff9;border-left:3px solid #82a16d;border-radius:5px}
+.plant-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.plant-method-card{padding:22px;border:1px solid #e3d9e5;border-radius:12px;background:#fff}.plant-method-number{font:700 11px var(--display);color:#829b70;letter-spacing:.12em}.plant-method-card h3{font:600 18px var(--display);color:#493b50;margin:9px 0}.plant-method-card p{font-size:12px;line-height:1.8;color:#746b79}.plant-link{display:block;padding-top:12px;border-top:1px solid #eee6ef;font-size:11px;line-height:1.6;color:#6e825e}.plant-takeaway{margin-top:18px;padding:17px 20px;background:#edf3e9;border-radius:9px;color:#4f6449;font-size:13px;line-height:1.7}
+@media(max-width:700px){.plant-intro-card{grid-template-columns:1fr;padding:18px}.plant-visual{height:210px}.plant-method-grid{grid-template-columns:1fr}.plant-section{padding-top:65px;padding-bottom:65px}}
+
+/* Reliable presentation controls and slide visibility */
+#slideDock {
+  display: flex;
+  pointer-events: auto;
+  z-index: 10000;
+}
+#slideDock button {
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+main > section[aria-hidden="true"] {
+  display: none !important;
+}
+main > section.topic-slide[aria-hidden="false"] {
+  display: flex !important;
+}
+
+/* =============================================================
+   FINAL DECK REVISION — deep ocean / teal / warm amber palette
+   Large readable type, balanced layouts, no internal slide scroll.
+   ============================================================= */
+:root{
+  --bg:#071522;--panel:#10283b;--panel2:#16364b;--line:rgba(132,196,213,.24);
+  --text:#f4f8fb;--muted:#c3d2dc;--cyan:#58d6e5;--cyan2:#b8f2f5;
+  --orange:#ffbf73;--pink:#f18c96;--green:#79dfb5;
+  --font:'DM Sans',sans-serif;--display:'Space Grotesk',sans-serif;
+}
+html,body{background:#071522;color:var(--text);overflow:hidden}
+.topbar{height:72px;background:rgba(6,18,30,.96);border-bottom:1px solid rgba(88,214,229,.18)}
+.brand-mark{background:linear-gradient(145deg,#b8f2f5,#58a8c0);color:#071522;box-shadow:none}
+.brand,.brand small{color:#f4f8fb}.brand small{opacity:.65}.brand-dot{color:var(--cyan)}
+.nav-links a{color:#c3d2dc}.nav-links a:hover,.nav-cta{color:var(--cyan)}
+.nav-cta{border-color:rgba(88,214,229,.4)}
+main{position:relative;height:calc(100dvh - 72px);min-height:0;overflow:hidden}
+main>section.deck-slide{
+  position:absolute;inset:0;width:100%;height:100%;min-height:0;max-width:none;
+  margin:0;padding:clamp(20px,3.4vh,40px) clamp(28px,5.5vw,84px) 82px;
+  display:none;flex-direction:column;justify-content:center;align-items:stretch;gap:clamp(14px,2.3vh,24px);
+  overflow:hidden;box-sizing:border-box;
+  background:radial-gradient(ellipse at 88% 10%,rgba(88,214,229,.13),transparent 34%),radial-gradient(ellipse at 5% 95%,rgba(255,191,115,.07),transparent 28%),linear-gradient(135deg,#081827,#0c2134 62%,#102b40);
+}
+main>section.deck-slide::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--cyan),#3286b7 60%,var(--orange))}
+main>section.deck-slide::after{content:"GROUP 5  /  EXCRETORY SYSTEM";position:absolute;right:28px;top:17px;color:rgba(190,218,229,.48);font:700 9px var(--font);letter-spacing:.19em}
+main>section.deck-slide.active-slide{display:flex!important}
+.deck-slide .section-heading{width:min(1200px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.8fr);align-items:end;gap:34px;flex:0 0 auto}
+.deck-slide .section-heading .eyebrow,.deck-slide .eyebrow{color:var(--cyan);font-size:clamp(11px,.9vw,13px);font-weight:700;letter-spacing:.17em}
+.deck-slide .section-heading h2,.deck-slide h2{font:700 clamp(34px,4.1vw,58px)/1.04 var(--display);letter-spacing:-.045em;color:#f6fafc;margin:0}
+.deck-slide .section-heading h2 em,.deck-slide h2 em{color:var(--cyan);font-style:normal}
+.deck-slide .section-heading>p{font-size:clamp(15px,1.15vw,18px);line-height:1.55;color:#c5d5df;margin:0;max-width:540px}
+.deck-slide .section-heading .eyebrow{margin-bottom:10px}
+.deck-slide .system-grid,.deck-slide .research-grid,.deck-slide .lesson-grid,.deck-slide .plant-method-grid{width:min(1200px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-content:center;min-height:0}
+.deck-slide .system-card,.deck-slide .research-grid article,.deck-slide .lesson-card,.deck-slide .plant-method-card,.deck-slide .anatomy-panel,.deck-slide .plant-intro-card,.deck-slide .plant-takeaway{
+  min-width:0;min-height:0;box-sizing:border-box;border:1px solid rgba(105,204,220,.27);border-radius:18px;
+  background:linear-gradient(145deg,rgba(23,54,77,.98),rgba(12,34,53,.98));color:#f4f8fb;
+  box-shadow:0 15px 35px rgba(0,0,0,.2)
+}
+.deck-slide .system-card,.deck-slide .research-grid article,.deck-slide .lesson-card,.deck-slide .plant-method-card{padding:clamp(18px,2.2vw,30px);position:relative;overflow:hidden}
+.deck-slide .system-card::before,.deck-slide .research-grid article::before,.deck-slide .lesson-card::before,.deck-slide .plant-method-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--cyan)}
+.deck-slide .system-card:nth-child(even)::before,.deck-slide .research-grid article:nth-child(even)::before,.deck-slide .lesson-card:nth-child(even)::before,.deck-slide .plant-method-card:nth-child(even)::before{background:var(--orange)}
+.deck-slide .system-card h3,.deck-slide .research-grid h3,.deck-slide .lesson-card h3,.deck-slide .plant-method-card h3{font:700 clamp(22px,2.1vw,30px)/1.15 var(--display);color:#fff;margin:7px 0 12px}
+.deck-slide .system-card p,.deck-slide .research-grid p,.deck-slide .lesson-card p,.deck-slide .plant-method-card p,.deck-slide .lesson-card li{font-size:clamp(15px,1.15vw,17px);line-height:1.55;color:#d1dee6}
+.deck-slide .lesson-card p{margin:0 0 12px}.deck-slide .lesson-card ul,.deck-slide .lesson-card ol{padding-left:22px;margin:9px 0 0}.deck-slide .lesson-card li{margin:7px 0}.deck-slide .lesson-card b{color:#fff}
+.deck-slide .lesson-number{width:38px;height:38px;margin:0 0 12px;background:rgba(88,214,229,.15);color:var(--cyan2);font:700 14px var(--display)}
+.deck-slide .card-topline,.deck-slide .plant-tag{color:var(--cyan2)}
+.deck-slide .tag-row span{color:#e3f1f5;border-color:rgba(123,204,218,.3);background:rgba(88,214,229,.08);font-size:12px}
+.deck-slide .text-button,.deck-slide .plant-link{color:var(--orange);font-size:13px;font-weight:700}
+.deck-slide .anatomy-panel{width:min(1200px,100%);margin:0 auto;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.deck-slide .anatomy-visual{min-height:300px;background:radial-gradient(ellipse,#1d4259,#0b1d2d 72%);border-radius:14px}
+.deck-slide .anatomy-copy h3{font:700 30px var(--display);color:#fff}.deck-slide .anatomy-copy p{font-size:16px;line-height:1.65;color:#cbd9e2}
+.deck-slide .organ-chip{font-size:13px;background:#17394e;border-color:#326078;color:#e5f2f6;padding:9px 14px}.deck-slide .organ-chip.active{background:#176078;border-color:var(--cyan);color:#fff}
+.deck-slide .fact-line{color:#cbd9e2;font-size:13px}
+.deck-slide .research-grid article{min-height:200px}.deck-slide .research-grid article h3{font-size:clamp(22px,2.2vw,29px)}
+
+/* Lesson slides: generous type and no orphan headings. */
+.deck-slide.lesson-topic-slide{gap:clamp(14px,2vh,22px)}
+.deck-slide.lesson-topic-slide .section-heading{grid-template-columns:1fr minmax(240px,.75fr)}
+.deck-slide.lesson-topic-slide .section-heading h2{font-size:clamp(30px,3.4vw,47px)}
+.deck-slide.lesson-topic-slide>.lesson-card{width:min(1100px,100%);margin:0 auto;padding:clamp(22px,3vw,38px);max-height:100%;overflow:hidden}
+.deck-slide.lesson-topic-slide .lesson-card h3{font-size:clamp(25px,2.6vw,36px);margin:5px 0 14px}
+.deck-slide.lesson-topic-slide .lesson-card p,.deck-slide.lesson-topic-slide .lesson-card li{font-size:clamp(16px,1.35vw,19px);line-height:1.58}
+.deck-slide.lesson-topic-slide .lesson-card li{margin:8px 0}
+
+/* Webcam slide: two stable columns; guide labels are placed on the diagram, not on top of controls. */
+.deck-slide.scanner-deck-slide{gap:12px}
+.deck-slide.scanner-deck-slide>.section-wrap{width:min(1280px,100%);max-width:none;margin:0 auto;display:flex;flex-direction:column;gap:12px;min-height:0}
+.deck-slide.scanner-deck-slide .scanner-heading{grid-template-columns:1fr .9fr;gap:28px}
+.deck-slide.scanner-deck-slide .scanner-heading h2{font-size:clamp(30px,3.2vw,44px)}
+.deck-slide.scanner-deck-slide .scanner-heading>p{font-size:14px}
+.deck-slide .scanner-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,.85fr);gap:14px;min-height:0;max-height:calc(100dvh - 250px);align-items:stretch}
+.deck-slide .camera-card,.deck-slide .scanner-info{min-width:0;min-height:0;background:rgba(11,30,47,.98);border:1px solid rgba(88,214,229,.3);border-radius:16px;box-shadow:0 14px 32px rgba(0,0,0,.22);overflow:hidden}
+.deck-slide .camera-card{display:flex;flex-direction:column}
+.deck-slide .camera-toolbar{height:40px;flex:0 0 40px;padding:0 14px;color:#e5f0f5;font-size:11px}
+.deck-slide .camera-stage{height:clamp(240px,37vh,370px);min-height:220px;flex:0 1 auto;background:radial-gradient(ellipse at center,#1b3d55,#071522 78%);overflow:hidden}
+.deck-slide .camera-stage:after{font-size:9px;padding:7px 9px}
+.deck-slide .camera-placeholder{max-width:400px;padding:16px}
+.deck-slide .camera-placeholder strong{font-size:clamp(17px,1.4vw,21px);color:#fff}.deck-slide .camera-placeholder span{font-size:14px;color:#c6d7e0;line-height:1.45}
+.deck-slide .camera-controls{display:flex;gap:10px;flex-wrap:wrap;padding:11px 14px 4px;flex:0 0 auto}
+.deck-slide .camera-controls .button{font-size:14px;min-height:42px;padding:10px 17px}
+.deck-slide .privacy-note,.deck-slide .status-message{font-size:11px;line-height:1.45;margin:6px 14px;color:#c1d0da;flex:0 0 auto}
+.deck-slide .scanner-info{padding:12px;display:flex;flex-direction:column;gap:7px}
+.deck-slide .scanner-info-header{flex:0 0 auto}
+.deck-slide .body-guide{margin:0;flex:1 1 auto;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;background:radial-gradient(ellipse,#1a3c53,#0b1d2d 72%);border-radius:10px;padding:5px}
+.deck-slide #bodyGuideSvg{height:clamp(220px,31vh,310px);width:100%;max-height:100%;display:block;margin:auto}
+.deck-slide #bodyGuideSvg text{font-size:11px;stroke:#10283b;stroke-width:2px;paint-order:stroke}
+.deck-slide .guide-legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:4px 8px 8px;color:#d5e3e9;font-size:11px}
+.deck-slide .guide-legend i{width:8px;height:8px}
+.deck-slide .guide-description{flex:0 0 auto}.deck-slide .guide-description strong{font-size:14px;color:#fff}.deck-slide .guide-description p{font-size:12px;line-height:1.4;color:#c0d0d9;margin:3px 0}
+.deck-slide .scanner-select{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 7px;color:#e0edf2;font-size:12px;border-color:rgba(132,196,213,.22)}
+.deck-slide .scanner-select select{min-width:0;max-width:65%;background:#17364b;border-color:#396078;color:#f4f8fb;font-size:12px;padding:7px 9px}
+.deck-slide .scanner-condition-note{font-size:11px;line-height:1.4;color:#d0e0e8;background:#122d42;border-color:rgba(88,214,229,.25);padding:8px 10px}
+.deck-slide .scanner-disclaimer{font-size:10px;line-height:1.4;color:#bacbd5;margin:0}
+.deck-slide .scan-guide{top:10px;left:10px;right:auto;display:flex;gap:6px;flex-wrap:wrap}
+.deck-slide .scan-guide span{font-size:10px;padding:5px 8px;background:rgba(5,18,30,.82);border:1px solid rgba(88,214,229,.25);border-radius:5px}
+
+/* Plant comparison: dark background and cards use the same palette as every other slide. */
+.deck-slide.plant-topic-slide{gap:14px}
+.deck-slide .plant-intro-card{grid-template-columns:minmax(180px,.55fr) 1.45fr;padding:18px;gap:22px;margin:0}
+.deck-slide .plant-visual{height:205px;background:radial-gradient(ellipse at 50% 38%,#315b50,#142f3c 75%)}
+.deck-slide .plant-label{color:#d3f2df}.deck-slide .plant-intro-copy h3{font-size:clamp(20px,2vw,27px);color:#fff}
+.deck-slide .plant-intro-copy p{font-size:14px;line-height:1.5;color:#d0dfe5}.deck-slide .plant-note{background:rgba(88,214,229,.09);border-left-color:var(--cyan);color:#e4f0f3}
+.deck-slide .plant-method-grid{gap:14px}
+.deck-slide .plant-method-card{padding:18px 22px}.deck-slide .plant-method-card h3{font-size:clamp(19px,1.8vw,24px)}
+.deck-slide .plant-method-card p{font-size:14px;line-height:1.5}.deck-slide .plant-link{display:block;border-color:rgba(132,196,213,.2);font-size:12px;color:var(--orange);padding-top:9px}
+.deck-slide .plant-takeaway{padding:14px 18px;margin:0;color:#e7f3f5;font-size:14px;line-height:1.5;background:linear-gradient(100deg,#173a4e,#1b3b43);border-left:4px solid var(--orange)}
+
+/* Simulator: 3 × 3 condition chooser, full labels visible, anatomical placement corrected. */
+.deck-slide.simulator-deck-slide{gap:12px}
+.deck-slide.simulator-deck-slide .section-heading h2{font-size:clamp(30px,3.2vw,44px)}
+.deck-slide.simulator-deck-slide .section-heading>p{font-size:14px}
+.deck-slide .simulator-card{width:min(1280px,100%);margin:0 auto;display:grid;grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);min-height:0;max-height:calc(100dvh - 230px);overflow:hidden;background:#0e263a;border:1px solid rgba(88,214,229,.3);border-radius:16px}
+.deck-slide .sim-controls{padding:12px 14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border:0;border-bottom:1px solid rgba(132,196,213,.22);overflow:hidden}
+.deck-slide .sim-controls>.eyebrow{grid-column:1/-1;margin:0 0 2px 4px}
+.deck-slide .condition-button{min-width:0;min-height:48px;display:flex;gap:8px;padding:7px 9px;border:1px solid rgba(132,196,213,.12);background:#122f45;border-radius:8px;color:#f2f7fa}
+.deck-slide .condition-button:hover,.deck-slide .condition-button.active{background:#19435a;border-color:var(--cyan)}
+.deck-slide .condition-number{font-size:12px;color:var(--cyan);flex:0 0 auto}
+.deck-slide .condition-button strong{font-size:13px;line-height:1.2;color:#fff}.deck-slide .condition-button small{font-size:10px;line-height:1.2;color:#c2d3dc}
+.deck-slide .condition-button b{display:none}
+.deck-slide .sim-system-toggle{grid-column:1/-1;margin:2px 0 0;padding:6px 4px 0;display:flex;flex-direction:row;align-items:center;gap:12px;font-size:12px}
+.deck-slide .sim-system-toggle select{width:auto;min-width:220px;background:#17364b;color:#fff;border-color:#396078}
+.deck-slide .sim-display{min-height:0;overflow:hidden;padding:12px 18px;display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:20px;row-gap:8px}
+.deck-slide .sim-display-top{grid-column:1/-1}.deck-slide .sim-visual{height:100%;min-height:220px;max-height:270px;margin:0;background:radial-gradient(ellipse,#1a3b50,#0a1c2b 76%)}
+.deck-slide .sim-visual svg{height:100%;width:100%;max-height:270px}
+.deck-slide .sim-explanation{grid-column:2;grid-row:2;display:flex;flex-direction:column;justify-content:center;gap:12px;min-width:0}
+.deck-slide .sim-explanation h3{font-size:clamp(20px,1.8vw,25px);color:#fff}.deck-slide .sim-explanation p{font-size:14px;line-height:1.5;color:#d1dfe7}
+.deck-slide .steps-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.deck-slide .step-item{font-size:12px;line-height:1.35;color:#d1dfe7}.deck-slide .step-item span{width:22px;height:22px;font-size:11px;background:#17465a;color:var(--cyan2);flex:0 0 auto}
+.deck-slide .sim-footnote{grid-column:1/-1;margin:0;padding-top:7px;font-size:11px;color:#b7cbd5}
+.deck-slide .torso-outline{fill:#8fb8c7;fill-opacity:.1;stroke:#83b3c3;stroke-opacity:.6}
+.deck-slide .sim-kidney{fill:#c65e70;stroke:#ffc2b6;stroke-width:2.4;filter:drop-shadow(0 0 6px rgba(241,140,150,.35))}
+.deck-slide .sim-ureter,.deck-slide .sim-urethra{stroke:var(--cyan);stroke-width:5}
+.deck-slide .sim-bladder{fill:#d98e61;stroke:#ffd3a4;stroke-width:2}
+.deck-slide .svg-label{fill:#d9edf2;font-size:10px;letter-spacing:1px}
+
+/* Closing */
+.deck-slide.closing-slide{align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 42%,rgba(88,214,229,.18),transparent 36%),linear-gradient(135deg,#071522,#123149)}
+.deck-slide .thank-you-inner{display:flex;flex-direction:column;align-items:center;gap:20px}
+.deck-slide .thank-you-inner h2{font-size:clamp(72px,11vw,150px);letter-spacing:-.07em;line-height:.95}
+.deck-slide .thank-you-inner h2 em{color:var(--orange);font-style:normal}
+.deck-slide .thank-you-inner p{font-size:clamp(24px,3vw,38px);color:#d6e6ec;margin:0}
+.deck-slide .thank-you-rule{width:130px;height:4px;border-radius:5px;background:linear-gradient(90deg,var(--cyan),var(--orange))}
+.deck-slide .thank-you-inner>span{font-size:11px;letter-spacing:.2em;color:#a9c2cf}
+
+/* Slide controls */
+.slide-dock{z-index:10000;background:rgba(5,17,29,.96);border:1px solid rgba(88,214,229,.3);box-shadow:0 10px 30px rgba(0,0,0,.4);gap:14px}
+.slide-dock button{min-width:76px;width:auto;height:36px;padding:0 12px;background:#17465a;border:1px solid #34778b;color:#fff;font:700 11px var(--font);letter-spacing:.08em}
+#slideCounter{color:var(--cyan2);font-size:12px;font-weight:700}
+.slide-progress{background:#294456}.slide-progress span{background:linear-gradient(90deg,var(--cyan),var(--orange))}
+.footer{display:none!important}
+
+@media(max-width:900px){
+  .topbar{height:64px}.nav-links{background:#0a1d2d;border-color:#24475a}.nav-links a{color:#e4f0f5}
+  main{height:calc(100dvh - 64px)}
+  main>section.deck-slide{padding:18px 20px 78px;gap:12px}
+  .deck-slide .section-heading{grid-template-columns:1fr;gap:8px}.deck-slide .section-heading h2{font-size:clamp(28px,5vw,40px)}
+  .deck-slide .section-heading>p{font-size:13px;line-height:1.4}
+  .deck-slide .scanner-layout{grid-template-columns:1fr minmax(250px,.8fr);max-height:calc(100dvh - 210px)}
+  .deck-slide .camera-stage{height:31vh;min-height:190px}
+  .deck-slide #bodyGuideSvg{height:25vh}
+  .deck-slide .sim-display{grid-template-columns:1fr 1.2fr}.deck-slide .sim-visual{min-height:180px}
+}
+@media(max-width:680px){
+  main>section.deck-slide{padding:16px 14px 72px;gap:10px}
+  main>section.deck-slide::after{display:none}
+  .deck-slide .system-grid,.deck-slide .research-grid,.deck-slide .lesson-grid,.deck-slide .plant-method-grid{grid-template-columns:1fr;gap:9px}
+  .deck-slide .system-card,.deck-slide .research-grid article,.deck-slide .lesson-card,.deck-slide .plant-method-card{padding:15px}
+  .deck-slide .system-card p,.deck-slide .research-grid p,.deck-slide .lesson-card p,.deck-slide .plant-method-card p,.deck-slide .lesson-card li{font-size:13px;line-height:1.42}
+  .deck-slide.lesson-topic-slide .lesson-card p,.deck-slide.lesson-topic-slide .lesson-card li{font-size:13px;line-height:1.42}
+  .deck-slide .anatomy-panel{grid-template-columns:1fr;padding:15px}.deck-slide .anatomy-visual{min-height:180px}
+  .deck-slide .scanner-layout{grid-template-columns:1fr;max-height:calc(100dvh - 205px);overflow:hidden}
+  .deck-slide .scanner-info{display:none}
+  .deck-slide .camera-stage{height:32vh;min-height:160px}
+  .deck-slide .plant-intro-card{grid-template-columns:1fr}.deck-slide .plant-visual{display:none}
+  .deck-slide .plant-method-card p{font-size:13px}
+  .deck-slide .sim-controls{grid-template-columns:repeat(2,minmax(0,1fr));padding:8px}
+  .deck-slide .condition-button{min-height:40px}.deck-slide .condition-button strong{font-size:11px}.deck-slide .condition-button small{display:none}
+  .deck-slide .sim-display{grid-template-columns:1fr;grid-template-rows:auto 190px auto auto;padding:9px;overflow:hidden}
+  .deck-slide .sim-visual{grid-column:1;grid-row:2;min-height:170px}
+  .deck-slide .sim-explanation{grid-column:1;grid-row:3}.deck-slide .sim-footnote{grid-row:4}
+  .deck-slide .steps-list{grid-template-columns:1fr 1fr}
+  .slide-dock{bottom:8px;gap:8px;padding:7px 9px}.slide-dock button{min-width:62px;height:32px;font-size:9px}
+}
+.deck-slide .torso-head{fill:#8fb8c7;fill-opacity:.09;stroke:#83b3c3;stroke-opacity:.6;stroke-width:2}
+.deck-slide .renal-vessels{fill:none;stroke:#e58a91;stroke-width:4;stroke-linecap:round}
+.deck-slide .kidney-cortex{fill:none;stroke:#ffd2bd;stroke-width:3;opacity:.72}
+.deck-slide .kidney-medulla{fill:#91475d;stroke:#d58b91;stroke-width:1.2;opacity:.9}
+.deck-slide .renal-pelvis{fill:none;stroke:#ffcc9a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.deck-slide .sim-ureter-inner{fill:none;stroke:#d6fbff;stroke-width:1.5;stroke-linecap:round;opacity:.85}
+.deck-slide .bladder-fluid{fill:#ffc17f;opacity:.45}
+.deck-slide.hero-slide.active-slide{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(340px,.9fr);align-items:center;gap:30px}
+.deck-slide.hero-slide .hero-copy{max-width:680px}
+.deck-slide.hero-slide .hero h1,.deck-slide.hero-slide h1{font-size:clamp(48px,6.5vw,86px);line-height:.98}
+.deck-slide.hero-slide .hero-description{font-size:clamp(16px,1.25vw,19px);line-height:1.6;color:#cbd9e2}
+.deck-slide.hero-slide .hero-art{height:min(65vh,560px)}
+@media(max-width:680px){.deck-slide.hero-slide.active-slide{display:flex!important}.deck-slide.hero-slide .hero-art{display:none}}
+
+.deck-slide .camera-stage:after{display:none!important;content:none!important}
+.deck-slide .scan-guide{display:none!important}
+.deck-slide.hero-slide h1 em{color:var(--cyan)}
+.deck-slide .floating-label{background:#102d42;color:#eaf7fa;border-color:rgba(88,214,229,.35)}
+.deck-slide .floating-label span{background:var(--cyan)}
+.deck-slide .hero-glow{background:rgba(88,214,229,.16)}
+.deck-slide .orbit{border-color:rgba(88,214,229,.3)}
+.deck-slide .hero-human{filter:drop-shadow(0 0 22px rgba(88,214,229,.2))}
+
+/* FINAL OVERFLOW / CLIPPING FIXES — content must fit inside the slide frame. */
+main > section.deck-slide,
+main > section.deck-slide * { box-sizing: border-box; }
+.deck-slide > * { min-width: 0; }
+.deck-slide .section-heading,
+.deck-slide .section-heading > div,
+.deck-slide .section-heading > p { min-width: 0; }
+.deck-slide .section-heading h2,
+.deck-slide h2,
+.deck-slide h3,
+.deck-slide p,
+.deck-slide li,
+.deck-slide label,
+.deck-slide button,
+.deck-slide span { overflow-wrap: anywhere; }
+.deck-slide .section-heading h2 { text-wrap: balance; max-width: 100%; }
+.deck-slide .section-heading > p { max-width: 100%; }
+.deck-slide .lesson-topic-slide { min-height: 0; }
+.deck-slide.lesson-topic-slide > .lesson-card {
+  width: min(1100px, 100%); max-height: none; height: auto; overflow: visible;
+  flex: 0 1 auto; align-self: center; min-height: 0;
+}
+.deck-slide.lesson-topic-slide .lesson-card p,
+.deck-slide.lesson-topic-slide .lesson-card li { overflow-wrap: anywhere; }
+.deck-slide .lesson-continued-label {
+  display: inline-flex; align-items: center; margin: 0 0 10px;
+  color: var(--cyan2); font: 700 11px var(--font); letter-spacing: .16em;
+}
+.deck-slide.scanner-deck-slide > .section-wrap { min-height: 0; height: 100%; }
+.deck-slide.scanner-deck-slide .scanner-layout {
+  max-height: none; height: min(56vh, 520px); flex: 0 1 520px; min-height: 0;
+}
+.deck-slide.scanner-deck-slide .scanner-info { min-height: 0; overflow: hidden; }
+.deck-slide.scanner-deck-slide .body-guide { min-height: 0; overflow: hidden; }
+.deck-slide.scanner-deck-slide #bodyGuideSvg { height: min(27vh, 250px); min-height: 190px; }
+.deck-slide.scanner-deck-slide .guide-legend { font-size: 10px; gap: 5px 10px; }
+.deck-slide.scanner-deck-slide .guide-description p { font-size: 11px; line-height: 1.3; }
+.deck-slide.scanner-deck-slide .scanner-select { min-height: 34px; }
+.deck-slide.scanner-deck-slide .scanner-condition-note { max-height: 52px; overflow: hidden; }
+.deck-slide.scanner-deck-slide .camera-stage { height: min(31vh, 280px); min-height: 190px; flex: 1 1 auto; }
+.deck-slide.scanner-deck-slide .camera-controls { flex-wrap: nowrap; }
+.deck-slide.scanner-deck-slide .camera-controls .button { white-space: nowrap; }
+.deck-slide.simulator-deck-slide .simulator-card {
+  max-height: none; height: min(62vh, 550px); flex: 0 1 550px; min-height: 0;
+}
+.deck-slide.simulator-deck-slide .sim-controls { min-height: 0; }
+.deck-slide.simulator-deck-slide .sim-display { min-height: 0; }
+.deck-slide.simulator-deck-slide .sim-visual { min-height: 0; height: 100%; }
+.deck-slide.simulator-deck-slide .sim-explanation { overflow: hidden; }
+.deck-slide .condition-button { min-width: 0; }
+.deck-slide .condition-button strong,
+.deck-slide .condition-button small { overflow-wrap: anywhere; }
+.deck-slide.plant-topic-slide .plant-intro-card,
+.deck-slide.plant-topic-slide .plant-method-grid,
+.deck-slide.plant-topic-slide .plant-takeaway { flex: 0 1 auto; min-height: 0; }
+.deck-slide.plant-topic-slide .plant-method-card { min-height: 0; }
+.deck-slide.plant-topic-slide .plant-method-card p { font-size: clamp(14px, 1.1vw, 16px); line-height: 1.45; }
+.deck-slide .thank-you-inner { max-width: 100%; }
+.deck-slide .thank-you-inner h2 { overflow-wrap: normal; }
+
+@media (max-height: 800px) and (min-width: 901px) {
+  main > section.deck-slide { padding-top: 16px; padding-bottom: 76px; gap: 12px; }
+  .deck-slide .section-heading h2 { font-size: clamp(28px, 3.1vw, 42px); }
+  .deck-slide .section-heading > p { font-size: 13px; line-height: 1.35; }
+  .deck-slide.lesson-topic-slide > .lesson-card { padding: 20px 26px; }
+  .deck-slide.lesson-topic-slide .lesson-card p,
+  .deck-slide.lesson-topic-slide .lesson-card li { font-size: 15px; line-height: 1.42; }
+  .deck-slide.scanner-deck-slide .scanner-layout { height: min(53vh, 440px); }
+  .deck-slide.scanner-deck-slide #bodyGuideSvg { height: min(22vh, 205px); min-height: 160px; }
+  .deck-slide.simulator-deck-slide .simulator-card { height: min(60vh, 470px); }
+}
+@media (max-width: 900px) {
+  .deck-slide.scanner-deck-slide > .section-wrap { height: auto; }
+  .deck-slide.scanner-deck-slide .scanner-layout { height: auto; flex: 1 1 auto; }
+  .deck-slide.scanner-deck-slide .scanner-info { overflow: auto; }
+  .deck-slide.simulator-deck-slide .simulator-card { height: auto; flex: 1 1 auto; overflow: auto; }
+}
+@media (max-width: 680px) {
+  .deck-slide.lesson-topic-slide > .lesson-card { padding: 17px; }
+  .deck-slide.lesson-topic-slide .lesson-card p,
+  .deck-slide.lesson-topic-slide .lesson-card li { font-size: 14px; line-height: 1.42; }
+  .deck-slide.scanner-deck-slide .camera-controls { flex-wrap: wrap; }
+}
+
+/* Simulator: keep the condition picker scrollable beside a continuously visible diagram. */
+.deck-slide.simulator-deck-slide .simulator-card {
+  display: grid;
+  grid-template-columns: minmax(245px, 0.34fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: min(66vh, 610px);
+  max-height: none;
+  min-height: 390px;
+  overflow: hidden;
+}
+.deck-slide.simulator-deck-slide .sim-controls {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  min-height: 0;
+  max-height: 100%;
+  padding: 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #39758a #10283a;
+  border-right: 1px solid rgba(132,196,213,.22);
+  border-bottom: 0;
+}
+.deck-slide.simulator-deck-slide .sim-controls > .eyebrow,
+.deck-slide.simulator-deck-slide .sim-system-toggle { flex: 0 0 auto; }
+.deck-slide.simulator-deck-slide .condition-button {
+  flex: 0 0 auto;
+  min-height: 54px;
+  width: 100%;
+  text-align: left;
+}
+.deck-slide.simulator-deck-slide .condition-button strong { font-size: 13px; }
+.deck-slide.simulator-deck-slide .condition-button small { font-size: 10px; }
+.deck-slide.simulator-deck-slide .sim-system-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-top: 4px;
+}
+.deck-slide.simulator-deck-slide .sim-system-toggle select { width: 100%; min-width: 0; }
+.deck-slide.simulator-deck-slide .sim-display {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  padding: 14px;
+}
+.deck-slide.simulator-deck-slide .sim-visual {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  height: 100%;
+  align-self: stretch;
+}
+.deck-slide.simulator-deck-slide .sim-visual svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+.deck-slide.simulator-deck-slide .sim-explanation {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4px 2px 4px 8px;
+  scrollbar-width: thin;
+}
+.deck-slide.simulator-deck-slide .sim-footnote { grid-column: 1 / -1; grid-row: 3; }
+@media (max-width: 900px) {
+  .deck-slide.simulator-deck-slide .simulator-card {
+    grid-template-columns: minmax(190px, .38fr) minmax(0, 1fr);
+    height: min(64vh, 560px);
+    min-height: 350px;
+  }
+  .deck-slide.simulator-deck-slide .sim-display {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    padding: 9px;
+  }
+  .deck-slide.simulator-deck-slide .sim-explanation p { font-size: 12px; }
+}
+@media (max-width: 680px) {
+  .deck-slide.simulator-deck-slide .simulator-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(112px, .36fr) minmax(0, 1fr);
+    height: min(66vh, 650px);
+    min-height: 430px;
+  }
+  .deck-slide.simulator-deck-slide .sim-controls {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 6px;
+    padding: 8px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(132,196,213,.22);
+  }
+  .deck-slide.simulator-deck-slide .sim-controls > .eyebrow,
+  .deck-slide.simulator-deck-slide .sim-system-toggle { grid-column: 1 / -1; }
+  .deck-slide.simulator-deck-slide .condition-button { min-height: 39px; padding: 5px 7px; }
+  .deck-slide.simulator-deck-slide .condition-button strong { font-size: 10px; }
+  .deck-slide.simulator-deck-slide .condition-button small { display: none; }
+  .deck-slide.simulator-deck-slide .sim-system-toggle {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 4px;
+  }
+  .deck-slide.simulator-deck-slide .sim-system-toggle select { width: 60%; }
+  .deck-slide.simulator-deck-slide .sim-display {
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    padding: 7px;
+  }
+  .deck-slide.simulator-deck-slide .sim-visual { grid-column: 1; grid-row: 2; min-height: 0; }
+  .deck-slide.simulator-deck-slide .sim-explanation { grid-column: 2; grid-row: 2; gap: 6px; }
+  .deck-slide.simulator-deck-slide .sim-explanation h3 { font-size: 15px; }
+  .deck-slide.simulator-deck-slide .sim-explanation p { font-size: 10px; line-height: 1.3; }
+  .deck-slide.simulator-deck-slide .steps-list { grid-template-columns: 1fr; gap: 4px; }
+  .deck-slide.simulator-deck-slide .step-item { font-size: 9px; }
+  .deck-slide.simulator-deck-slide .sim-footnote { font-size: 9px; }
+}
+
+/* Simulator refinement: keep the condition chooser independently scrollable
+   and give the anatomical illustration its own stable viewing area. */
+.deck-slide.simulator-deck-slide .simulator-card {
+  grid-template-columns:minmax(225px,.62fr) minmax(0,1.38fr);
+  grid-template-rows:minmax(0,1fr);
+  max-height:calc(100dvh - 220px);
+}
+.deck-slide.simulator-deck-slide .sim-controls {
+  grid-column:1; grid-row:1;
+  display:flex; flex-direction:column; align-items:stretch;
+  gap:7px; min-height:0; max-height:100%;
+  overflow-y:auto; overflow-x:hidden;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(88,214,229,.55) rgba(10,28,43,.45);
+  border-right:1px solid rgba(132,196,213,.22);
+  border-bottom:0;
+}
+.deck-slide.simulator-deck-slide .sim-controls>.eyebrow { flex:0 0 auto; }
+.deck-slide.simulator-deck-slide .condition-button { flex:0 0 auto; width:100%; min-height:54px; }
+.deck-slide.simulator-deck-slide .sim-system-toggle { flex:0 0 auto; flex-wrap:wrap; }
+.deck-slide.simulator-deck-slide .sim-display {
+  grid-column:2; grid-row:1;
+  grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+  grid-template-rows:auto minmax(180px,1fr) auto;
+  min-width:0;
+}
+.deck-slide.simulator-deck-slide .sim-visual { grid-column:1; grid-row:2; min-height:190px; }
+.deck-slide.simulator-deck-slide .sim-explanation { grid-column:2; grid-row:2; }
+.deck-slide.simulator-deck-slide .sim-footnote { grid-column:1/-1; }
+.deck-slide .sim-visual.sweat-excess .sweat-flow { stroke-width:7; stroke-dasharray:3 5; }
+.deck-slide .sim-visual.sweat-low .sweat-flow { opacity:.18; }
+.deck-slide .sim-visual.sweat-blocked .sweat-duct { stroke:#ff9b82; stroke-dasharray:5 4; }
+.deck-slide .sim-visual.sweat-odour .sweat-coil { stroke:#d7b0e9; }
+@media(max-width:760px) {
+  .deck-slide.simulator-deck-slide .simulator-card { grid-template-columns:1fr; grid-template-rows:minmax(130px,.42fr) minmax(0,1fr); }
+  .deck-slide.simulator-deck-slide .sim-controls { grid-column:1; grid-row:1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-right:0; border-bottom:1px solid rgba(132,196,213,.22); }
+  .deck-slide.simulator-deck-slide .sim-controls>.eyebrow,.deck-slide.simulator-deck-slide .sim-system-toggle { grid-column:1/-1; }
+  .deck-slide.simulator-deck-slide .sim-display { grid-column:1; grid-row:2; grid-template-columns:1fr; grid-template-rows:auto minmax(150px, .8fr) auto auto; }
+  .deck-slide.simulator-deck-slide .sim-visual { grid-column:1; grid-row:2; }
+  .deck-slide.simulator-deck-slide .sim-explanation { grid-column:1; grid-row:3; }
+}

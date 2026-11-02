@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive educational exploration of the human excretory system.">
+  <title>GROUP 5 | Excretory System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Group 5 Excretory System home">
+      <span class="brand-mark">E</span>
+      <span>GROUP 5 <span class="brand-dot">·</span> EXCRETORY SYSTEM<small>SWEAT SYSTEM TO URINARY SYSTEM</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Welcome</a>
+      <a href="#explore">Systems</a>
+      <a href="#scanner">Anatomy</a>
+      <a href="#learning">How it works</a>
+      <a href="#plants">Plants & excretion</a>
+      <a href="#simulator">Explore conditions</a>
+      <a href="#about">Key takeaways</a>
+    </nav>
+    <a class="nav-cta" href="#scanner">Launch scanner <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> INTERACTIVE BIOLOGY EXPERIENCE</div>
+        <h1>GROUP 5<br><em>The Excretory System</em></h1>
+        <p class="hero-description">From sweat glands to kidneys, explore how the body removes metabolic wastes, regulates fluids, and maintains homeostasis. Use the interactive anatomy explorer, webcam body view, and guided learning modules.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#explore">Explore the system <span>→</span></a>
+          <a class="button button-ghost" href="#scanner"><span class="play-icon">◎</span> Try body scanner</a>
+        </div>
+        <div class="hero-note"><span class="tiny-check">✓</span> Educational visualization · No medical diagnosis</div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-human">
+          <svg viewBox="0 0 360 520" role="img" aria-label="Stylized human body with highlighted excretory organs">
+            <defs>
+              <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8edf1" stop-opacity=".9"/><stop offset="1" stop-color="#4f91aa" stop-opacity=".28"/></linearGradient>
+              <linearGradient id="organGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffbf73"/><stop offset="1" stop-color="#b95d70"/></linearGradient>
+              <filter id="softGlow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <circle cx="180" cy="57" r="39" fill="url(#bodyGrad)" stroke="#b8edf1" stroke-opacity=".7"/>
+            <path d="M145 105 Q115 112 94 136 L55 250 Q50 267 67 275 Q81 281 90 264 L126 184 L132 285 L116 430 Q113 450 133 452 Q151 454 155 434 L178 320 L201 434 Q205 454 224 452 Q244 450 240 430 L226 285 L234 184 L270 264 Q279 281 293 275 Q310 267 305 250 L266 136 Q245 112 215 105 Z" fill="url(#bodyGrad)" stroke="#b8edf1" stroke-opacity=".65" stroke-width="2"/>
+            <path d="M145 107 Q180 126 215 107 M132 185 Q180 205 234 185" fill="none" stroke="#b8edf1" stroke-opacity=".35"/>
+            <path d="M150 210 C130 198 116 214 119 236 C122 256 140 264 155 250 C166 239 160 230 151 225 C143 221 141 216 150 210Z" fill="url(#organGrad)" filter="url(#softGlow)"/>
+            <path d="M210 210 C230 198 244 214 241 236 C238 256 220 264 205 250 C194 239 200 230 209 225 C217 221 219 216 210 210Z" fill="url(#organGrad)" filter="url(#softGlow)"/>
+            <path d="M155 251 Q164 279 176 291 M205 251 Q196 279 184 291" fill="none" stroke="#dfc9ff" stroke-width="5" stroke-linecap="round"/>
+            <path d="M180 286 Q158 291 158 318 Q160 343 180 347 Q200 343 202 318 Q202 291 180 286Z" fill="#ffb46c" stroke="#ffe0b8" stroke-width="2" filter="url(#softGlow)"/>
+            <path d="M180 347 L180 370" stroke="#ffb46c" stroke-width="5" stroke-linecap="round"/>
+            <g fill="#7ee8f1"><circle cx="110" cy="155" r="3"/><circle cx="249" cy="155" r="3"/><circle cx="120" cy="295" r="2.5"/><circle cx="240" cy="295" r="2.5"/></g>
+          </svg>
+        </div>
+        <div class="floating-label label-kidney"><span></span> KIDNEYS</div>
+        <div class="floating-label label-bladder"><span></span> BLADDER</div>
+        <div class="floating-label label-skin"><span></span> SWEAT GLANDS</div>
+        <div class="hero-caption">A connected system. Multiple pathways.</div>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / EXPLORE</div><h2>Two pathways.<br><em>One balanced body.</em></h2></div>
+        <p>The excretory system includes organs and processes that help remove metabolic wastes and regulate the body's internal environment.</p>
+      </div>
+      <div class="system-grid">
+        <article class="system-card skin-card">
+          <div class="card-topline"><span>PATHWAY 01</span><span class="card-icon">✳</span></div>
+          <div class="system-illustration skin-illustration">
+            <svg viewBox="0 0 300 170" aria-hidden="true">
+              <path d="M20 38 H280" stroke="#f6c69c" stroke-width="18" stroke-linecap="round"/>
+              <path d="M20 58 H280" stroke="#e9a979" stroke-width="22"/>
+              <path d="M20 82 H280" stroke="#bd805d" stroke-width="24"/>
+              <path d="M20 105 H280" stroke="#7e5c55" stroke-width="34"/>
+              <path d="M150 40 V91 Q150 105 134 105 Q118 105 118 124 Q118 144 139 144 Q160 144 160 125" fill="none" stroke="#58d6e5" stroke-width="7" stroke-linecap="round"/>
+              <path d="M150 40 V12" stroke="#58d6e5" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="150" cy="10" r="5" fill="#dfc9ff"/>
+              <path d="M150 0 V-5 M137 4 L133 -1 M163 4 L167 -1" stroke="#dfc9ff" stroke-width="2"/>
+              <path d="M205 42 V90 Q205 103 219 103 Q233 103 233 119" fill="none" stroke="#58d6e5" stroke-width="5"/>
+            </svg>
+          </div>
+          <h3>Sweat system</h3>
+          <p>Skin and sweat glands release sweat. Evaporation helps cool the body, while small amounts of salts and other substances leave with sweat.</p>
+          <div class="tag-row"><span>Skin</span><span>Eccrine glands</span><span>Thermoregulation</span></div>
+          <button class="text-button" data-organ="sweat">Explore sweat glands <span>→</span></button>
+        </article>
+        <article class="system-card urinary-card">
+          <div class="card-topline"><span>PATHWAY 02</span><span class="card-icon">⌁</span></div>
+          <div class="system-illustration kidney-illustration">
+            <svg viewBox="0 0 300 170" aria-hidden="true">
+              <path d="M105 36 C72 18 53 48 61 82 C69 116 96 130 119 109 C133 96 126 82 113 74 C100 66 98 52 105 36Z" fill="#e77e83" stroke="#ffc1bd" stroke-width="3"/>
+              <path d="M195 36 C228 18 247 48 239 82 C231 116 204 130 181 109 C167 96 174 82 187 74 C200 66 202 52 195 36Z" fill="#e77e83" stroke="#ffc1bd" stroke-width="3"/>
+              <path d="M119 93 Q136 119 145 126 L145 140 M181 93 Q164 119 155 126 L155 140" fill="none" stroke="#58d6e5" stroke-width="5" stroke-linecap="round"/>
+              <path d="M145 138 Q150 132 155 138 L160 150 Q150 163 140 150Z" fill="#f6b36f" stroke="#ffdfb1" stroke-width="2"/>
+              <path d="M150 160 V169" stroke="#f6b36f" stroke-width="5"/>
+              <path d="M37 73 H62 M238 73 H263" stroke="#58d6e5" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Urinary system</h3>
+          <p>Kidneys filter blood and form urine. The ureters transport it to the bladder, where it is stored before leaving through the urethra.</p>
+          <div class="tag-row"><span>Kidneys</span><span>Nephrons</span><span>Urine formation</span></div>
+          <button class="text-button" data-organ="kidney">Explore urinary organs <span>→</span></button>
+        </article>
+      </div>
+
+      <div class="anatomy-panel" id="anatomyPanel">
+        <div class="anatomy-visual" id="anatomyVisual" aria-live="polite"></div>
+        <div class="anatomy-copy">
+          <div class="eyebrow">ANATOMY EXPLORER</div>
+          <h3 id="anatomyTitle">Explore an organ</h3>
+          <p id="anatomyDescription">Select an organ or structure to learn where it is found and what it does.</p>
+          <div class="organ-buttons" id="organButtons">
+            <button class="organ-chip active" data-detail="kidney">Kidney</button>
+            <button class="organ-chip" data-detail="ureter">Ureter</button>
+            <button class="organ-chip" data-detail="bladder">Bladder</button>
+            <button class="organ-chip" data-detail="urethra">Urethra</button>
+            <button class="organ-chip" data-detail="nephron">Nephron</button>
+            <button class="organ-chip" data-detail="sweat">Sweat gland</button>
+          </div>
+          <div class="fact-line"><span class="fact-icon">i</span><span id="anatomyFact">The nephron is the functional unit of the kidney.</span></div>
+        </div>
+      </div>
+            <div class="research-grid" aria-label="Research-based key facts">
+        <article><span class="eyebrow">KEY FACT 01</span><h3>Skin and sweat</h3><p>The epidermis forms the protective outer barrier. Most eccrine sweat glands sit in the dermis and release watery sweat through ducts to skin pores. Evaporation, not wetness alone, removes heat.</p></article>
+        <article><span class="eyebrow">KEY FACT 02</span><h3>Kidney structure</h3><p>Each kidney has an outer cortex, inner medulla, and renal pelvis. Nephrons filter blood and adjust the fluid that becomes urine. The renal pelvis funnels urine into the ureter.</p></article>
+        <article><span class="eyebrow">KEY FACT 03</span><h3>Urine formation</h3><p>Urine forms through glomerular filtration, tubular reabsorption, and tubular secretion. ADH increases water reabsorption in the collecting ducts, making urine more concentrated.</p></article>
+        <article><span class="eyebrow">KEY FACT 04</span><h3>Clinical assessment</h3><p>Urinalysis can check for blood, protein, glucose, and signs of infection. Urine culture can identify bacteria. Blood creatinine and estimated GFR help assess kidney function, while ultrasound or CT may be used to investigate stones or blockage.</p></article>
+        <article><span class="eyebrow">KEY FACT 05</span><h3>Common skin conditions</h3><p>Hyperhidrosis involves excessive sweating, while anhidrosis means reduced or absent sweating. Heat exhaustion and heat stroke are heat-related illnesses, and miliaria (heat rash) can occur when sweat ducts become blocked.</p></article>
+      </div>
+    </section>
+
+    <section class="scanner-section" id="scanner">
+      <div class="section-wrap">
+        <div class="section-heading scanner-heading">
+          <div><div class="eyebrow">02 / BODY SCANNER</div><h2>See the system<br><em>in context.</em></h2></div>
+          <p>Start your webcam to see a live preview. If body tracking loads, the overlay will follow your shoulders and hips. The anatomical guide remains available even if tracking is unavailable.</p>
+        </div>
+        <div class="scanner-layout">
+          <div class="camera-card">
+            <div class="camera-toolbar"><span><i class="live-dot"></i> LIVE CAMERA VIEW</span><span id="cameraStatus">Camera is off</span></div>
+            <div class="camera-stage" id="cameraStage">
+              <video id="webcam" autoplay playsinline muted></video>
+              <canvas id="poseCanvas"></canvas>
+              <div class="camera-placeholder" id="cameraPlaceholder">
+                <div class="camera-placeholder-icon">◎</div>
+                <strong>Your camera preview will appear here</strong>
+                <span>Stand far enough back for your shoulders and hips to be visible.</span>
+              </div>
+              <div class="scan-guide"><span>HEAD</span><span>SHOULDERS</span><span>HIPS</span></div>
+            </div>
+            <div class="camera-controls">
+              <button class="button button-primary" id="startCamera">Open camera <span>↗</span></button>
+              <button class="button button-ghost" id="stopCamera" disabled>Close camera</button>
+            </div>
+            <p class="privacy-note"><span>🔒</span> Camera processing happens in your browser. This demo does not upload or save video.</p>
+            <p class="status-message" id="scanMessage" aria-live="polite">Start the camera preview. Body tracking is an optional enhancement.</p>
+          </div>
+          <aside class="scanner-info">
+            <div class="scanner-info-header"><span class="eyebrow">ANATOMICAL GUIDE</span><span class="guide-status" id="guideStatus">WAITING</span></div>
+            <div class="body-guide">
+              <svg id="bodyGuideSvg" viewBox="0 0 320 440" role="img" aria-label="Front-view schematic showing kidneys in the upper abdomen, ureters descending to the pelvic bladder">
+                <defs>
+                  <linearGradient id="guideBody" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8cb8c8" stop-opacity=".22"/><stop offset="1" stop-color="#8cb8c8" stop-opacity=".06"/></linearGradient>
+                  <linearGradient id="guideKidney" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb0a5"/><stop offset="1" stop-color="#b84f68"/></linearGradient>
+                </defs>
+                <circle cx="160" cy="28" r="19" fill="url(#guideBody)" stroke="#83a9bb" stroke-width="1.8"/>
+                <path d="M139 54 C120 56 106 66 98 83 L75 151 Q70 165 82 171 Q93 176 99 163 L116 119 L119 218 Q120 244 139 259 L144 390 Q145 404 157 404 Q168 404 170 390 L160 286 L160 269 L160 286 L150 390 Q152 404 164 404 Q176 404 177 390 L181 259 C200 244 201 218 202 119 L219 163 Q225 176 236 171 Q248 165 243 151 L220 83 C212 66 198 56 179 54Z" fill="url(#guideBody)" stroke="#83a9bb" stroke-width="1.8"/>
+                <path d="M147 83 C130 74 119 91 121 119 L125 157 Q128 173 143 168 Q155 163 156 143 L156 94Z" fill="#477b94" fill-opacity=".32" stroke="#6f9fb4" stroke-width="1.5"/>
+                <path d="M173 83 C190 74 201 91 199 119 L195 157 Q192 173 177 168 Q165 163 164 143 L164 94Z" fill="#477b94" fill-opacity=".32" stroke="#6f9fb4" stroke-width="1.5"/>
+                <path d="M159 85 V178 M159 152 H128 M159 152 H191" stroke="#e58a91" stroke-width="4" stroke-linecap="round" fill="none"/>
+                <path d="M159 158 H128 M159 158 H191" stroke="#79b5d5" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M128 176 C111 166 103 184 108 207 C113 228 131 231 143 214 C151 202 143 191 134 188 C126 186 124 180 128 176Z" fill="url(#guideKidney)" stroke="#ffd0c5" stroke-width="2"/>
+                <path d="M190 176 C207 166 215 184 210 207 C205 228 187 231 175 214 C167 202 175 191 184 188 C192 186 194 180 190 176Z" fill="url(#guideKidney)" stroke="#ffd0c5" stroke-width="2"/>
+                <path d="M143 211 C145 239 151 255 154 279 M177 211 C175 239 169 255 166 279" fill="none" stroke="#55d6e8" stroke-width="4" stroke-linecap="round"/>
+                <path d="M143 211 C145 239 151 255 154 279 M177 211 C175 239 169 255 166 279" fill="none" stroke="#d5fbff" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M160 273 C143 273 137 286 141 306 Q146 325 160 327 Q174 325 179 306 C183 286 177 273 160 273Z" fill="#e6a16c" stroke="#ffd2a4" stroke-width="2"/>
+                <path d="M160 327 V347" stroke="#e6a16c" stroke-width="4" stroke-linecap="round"/>
+                <g class="guide-labels" fill="#f0f7fa" font-family="DM Sans,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing=".6">
+                  <text x="9" y="191">KIDNEY</text><path d="M53 187 L108 196" stroke="#ffb0a5" stroke-width="1.2"/>
+                  <text x="238" y="191">KIDNEY</text><path d="M234 187 L212 196" stroke="#ffb0a5" stroke-width="1.2"/>
+                  <text x="7" y="257">URETERS</text><path d="M60 253 L145 253" stroke="#55d6e8" stroke-width="1.2"/>
+                  <text x="235" y="306">BLADDER</text><path d="M231 302 L179 301" stroke="#e6a16c" stroke-width="1.2"/>
+                </g>
+              </svg>
+              <div class="guide-legend">
+                <span><i class="legend-kidney"></i> Kidneys</span>
+                <span><i class="legend-urine"></i> Ureters, bladder & urethra</span>
+                <span><i class="legend-vessel"></i> Renal blood vessels</span>
+                <span><i class="legend-context"></i> Other organs shown for context</span>
+              </div>
+            </div>
+            <div class="guide-description">
+              <strong id="guideTitle">Approximate organ locations</strong>
+              <p id="guideDescription">This front-view diagram shows the approximate positions of major organs. The webcam can estimate body landmarks, but it cannot see or identify internal organs.</p>
+            </div>
+            <div class="scanner-select">
+              <label for="scannerSystem">Highlight system</label>
+              <select id="scannerSystem"><option value="urinary" selected>Urinary system</option><option value="all">Show both systems</option><option value="sweat">Sweat-producing system</option></select>
+            </div>
+            <div class="scanner-select condition-select">
+              <label for="scannerCondition">Show a condition</label>
+              <select id="scannerCondition">
+                <option value="normal">Normal function</option>
+                <option value="uti">Urinary tract infection</option>
+                <option value="ckd">Chronic kidney disease</option>
+                <option value="stones">Kidney stones</option>
+              </select>
+            </div>
+            <div class="scanner-condition-note" id="scannerConditionNote" aria-live="polite">Normal pathway: urine travels from the kidneys through the ureters to the bladder.</div>
+          </aside>
+        </div>
+        <div class="scanner-disclaimer">Important: A webcam cannot see internal organs. Pose detection estimates body landmarks; the organ graphics are educational overlays and are not medical imaging.</div>
+      </div>
+    </section>
+        <section class="learning-section section-wrap" id="learning">
+      <div class="section-heading">
+        <div><div class="eyebrow">LEARNING MODULE</div><h2>How the body<br><em>removes waste.</em></h2></div>
+        <p>A lesson sequence for introducing excretion, the urinary organs, kidney structure, and the formation of urine.</p>
+      </div>
+      <div class="lesson-grid">
+        <article class="lesson-card"><span class="lesson-number">01</span><h3>What is excretion?</h3>
+          <p>Excretion is the removal of metabolic waste produced by cells. It is different from egestion, which removes undigested food from the digestive tract. Excretion helps prevent harmful waste from accumulating and supports a stable internal environment.</p>
+          <ul><li><b>Carbon dioxide:</b> carried in the blood to the lungs and released during exhalation.</li><li><b>Urea:</b> formed in the liver from the breakdown of excess amino acids and removed mainly by the kidneys.</li><li><b>Excess water and salts:</b> regulated by the kidneys and also lost through the skin.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">02</span><h3>The urinary system at a glance</h3>
+          <p>The urinary system consists of two kidneys, two ureters, the urinary bladder, and the urethra. Together, these structures filter blood, produce urine, transport it, store it, and eliminate it.</p>
+          <ul><li><b>Kidneys:</b> filter blood and regulate water, electrolytes, and acid-base balance.</li><li><b>Ureters:</b> move urine to the bladder by peristaltic contractions.</li><li><b>Bladder:</b> stores urine until urination.</li><li><b>Urethra:</b> carries urine out of the body.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">03</span><h3>Kidney anatomy and blood supply</h3>
+          <p>Each kidney is enclosed by a protective capsule. Its outer renal cortex surrounds the inner renal medulla, which contains renal pyramids. Urine drains from the papillae into minor and major calyces, then into the renal pelvis and ureter.</p>
+          <ul><li>The renal artery brings blood to the kidney for filtration.</li><li>The renal vein carries filtered blood away from the kidney.</li><li>The renal hilum is the medial entry and exit area for vessels, nerves, and the ureter.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">04</span><h3>The nephron: the functional unit</h3>
+          <p>Each nephron contains a renal corpuscle and a renal tubule. The renal corpuscle consists of the glomerulus, a capillary network, surrounded by Bowman's capsule. The tubule includes the proximal convoluted tubule, loop of Henle, and distal convoluted tubule, which drains toward a collecting duct.</p>
+          <ul><li><b>Glomerulus:</b> filters water and small solutes from blood.</li><li><b>Bowman's capsule:</b> receives the filtrate.</li><li><b>Tubules:</b> selectively return useful substances and water to the blood and secrete additional wastes.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">05</span><h3>Three steps of urine formation</h3>
+          <p>Urine formation is a coordinated process that changes the initial filtrate into the fluid that leaves the body.</p>
+          <ol><li><b>Glomerular filtration:</b> water and small dissolved substances pass from glomerular blood into Bowman's capsule. Blood cells and most large proteins remain in the bloodstream.</li><li><b>Tubular reabsorption:</b> useful substances, including glucose, amino acids, ions, and needed water, return from the tubule to the blood.</li><li><b>Tubular secretion:</b> selected substances move from the blood into the tubule, helping regulate pH and remove certain ions, drugs, and wastes.</li></ol>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">06</span><h3>From kidney to outside</h3>
+          <p>After urine is formed, it passes through collecting ducts, renal papillae, calyces, and the renal pelvis. It then travels down a ureter to the bladder. Stretch receptors in the bladder wall contribute to the sensation of needing to urinate. During urination, bladder muscle contracts and sphincters relax in a coordinated process.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="learning-section learning-alt section-wrap" id="day-two">
+      <div class="section-heading">
+        <div><div class="eyebrow">LEARNING MODULE</div><h2>Regulation,<br><em>health, and connections.</em></h2></div>
+        <p>Continue with homeostasis, the sweat system, interactions among organ systems, and common urinary conditions.</p>
+      </div>
+      <div class="lesson-grid">
+        <article class="lesson-card"><span class="lesson-number">07</span><h3>Kidneys and homeostasis</h3>
+          <p>Homeostasis is the maintenance of relatively stable internal conditions. The kidneys contribute by adjusting the volume and composition of blood and by removing metabolic wastes.</p>
+          <ul><li><b>Water balance:</b> kidneys adjust how much water is reabsorbed, changing urine volume and concentration.</li><li><b>Electrolytes:</b> sodium, potassium, calcium, and other ions are regulated through selective reabsorption and secretion.</li><li><b>Blood pressure:</b> the kidneys influence blood volume and release renin as part of the renin-angiotensin-aldosterone system.</li><li><b>Blood pH:</b> kidneys help regulate acid-base balance by secreting hydrogen ions and managing bicarbonate.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">08</span><h3>Hormones that influence kidney function</h3>
+          <p>Hormones help the kidneys respond to changes in the body's internal environment.</p>
+          <ul><li><b>Antidiuretic hormone (ADH):</b> increases water reabsorption in the collecting ducts, helping conserve water and produce more concentrated urine.</li><li><b>Aldosterone:</b> increases sodium reabsorption and potassium secretion in parts of the nephron. Water may follow sodium.</li><li><b>Atrial natriuretic peptide (ANP):</b> promotes sodium and water excretion when blood volume is elevated.</li><li><b>Erythropoietin:</b> released mainly by the kidneys in response to low oxygen availability and stimulates red blood cell production in bone marrow.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">09</span><h3>The sweat system</h3>
+          <p>Sweat glands are located in the skin. Eccrine glands are widely distributed and produce watery sweat that reaches the surface through ducts. Evaporation of sweat removes heat and helps regulate body temperature.</p>
+          <ul><li>Sweat is mostly water and contains dissolved electrolytes, especially sodium and chloride.</li><li>When sweat evaporates, heat is transferred away from the skin.</li><li>Apocrine glands occur in specific regions and produce a thicker secretion into hair follicles.</li><li>Although sweat contains small amounts of waste, the kidneys are the primary organs for removing urea and regulating the composition of body fluids.</li><li><b>Hyperhidrosis:</b> excessive sweating beyond what is needed to cool the body; it may affect the hands, feet, underarms, or other areas.</li><li><b>Anhidrosis / hypohidrosis:</b> little or no sweating, which can make it harder for the body to cool down and increase the risk of overheating.</li><li><b>Miliaria (heat rash):</b> an itchy or prickly rash that develops when sweat ducts become blocked and sweat is trapped under the skin.</li><li><b>Bromhidrosis:</b> noticeable body odour that can occur when skin bacteria break down substances in sweat; hygiene, clothing, and other factors can contribute.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">10</span><h3>How body systems work together</h3>
+          <p>The excretory system does not work alone. It is connected to several other organ systems through blood circulation, breathing, digestion, and temperature regulation.</p>
+          <ul><li><b>Circulatory system:</b> transports wastes in blood to the kidneys and carries water and solutes between tissues and organs.</li><li><b>Respiratory system:</b> removes carbon dioxide, a waste product of cellular respiration.</li><li><b>Digestive system:</b> supplies nutrients; the liver processes nitrogen-containing waste and converts ammonia into urea.</li><li><b>Integumentary system:</b> skin and sweat glands support cooling and release small quantities of water and salts.</li><li><b>Endocrine system:</b> hormones coordinate water, salt, and blood-pressure regulation.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">11</span><h3>Common urinary conditions</h3>
+          <p>Conditions can affect different parts of the urinary tract or the kidneys' filtering structures.</p>
+          <ul><li><b>Urinary tract infection (UTI):</b> infection in any part of the urinary tract, commonly involving the bladder.</li><li><b>Kidney stones:</b> mineral crystals that form stones and may obstruct urine flow.</li><li><b>Glomerulonephritis:</b> inflammation or damage involving the glomeruli.</li><li><b>Acute kidney injury:</b> a sudden decline in kidney function.</li><li><b>Chronic kidney disease:</b> kidney abnormalities that persist over time and may reduce filtering capacity.</li><li><b>Urinary retention:</b> difficulty emptying the bladder completely.</li></ul>
+        </article>
+        <article class="lesson-card"><span class="lesson-number">12</span><h3>Keeping the urinary system healthy</h3>
+          <p>General habits can support urinary and kidney health, although they cannot prevent every condition.</p>
+          <ul><li>Drink enough fluids for your needs and activity level.</li><li>Practice good hygiene and avoid delaying urination for long periods.</li><li>Follow medical guidance when taking medicines, especially those that can affect kidney function.</li><li>Manage health conditions with the help of qualified health professionals.</li><li>Seek medical advice for persistent urinary symptoms, blood in urine, fever with side or back pain, or major changes in urination.</li></ul>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="plant-section section-wrap" id="plants">
+      <div class="section-heading">
+        <div><div class="eyebrow">HUMAN–PLANT CONNECTION</div><h2>Plants remove waste<br><em>in a different way.</em></h2></div>
+        <p>Plants do not have a separate excretory system like humans. Instead, they use several structures and processes to release, reuse, or store substances they no longer need.</p>
+      </div>
+      <div class="plant-intro-card">
+        <div class="plant-visual" aria-hidden="true"><div class="plant-stem"></div><div class="plant-leaf leaf-one"></div><div class="plant-leaf leaf-two"></div><div class="plant-root"></div><span class="plant-label label-stomata">STOMATA</span><span class="plant-label label-roots">ROOTS</span></div>
+        <div class="plant-intro-copy"><span class="plant-tag">THE PLANT COUNTERPART</span><h3>Same general need, different structures.</h3><p>Like humans, plants produce wastes through metabolism. Unlike humans, they do not rely on kidneys, ureters, and a bladder. They may release gases and water through leaves, release some substances through roots, or store certain wastes in tissues that are later shed.</p><p class="plant-note"><strong>Important distinction:</strong> this is a functional comparison, not a one-to-one organ match. A plant's stomata are not kidneys, and vacuoles are not a bladder.</p></div>
+      </div>
+      <div class="plant-method-grid">
+        <article class="plant-method-card"><span class="plant-method-number">01</span><h3>Stomata and transpiration</h3><p>Small openings, mainly on leaves, allow gases to move in and out. Water vapor also leaves through stomata during transpiration. This releases excess water and helps move water through the plant.</p><span class="plant-link">Human comparison: lungs release carbon dioxide; skin loses water through sweat.</span></article>
+        <article class="plant-method-card"><span class="plant-method-number">02</span><h3>Storage in vacuoles and tissues</h3><p>Some waste products can be isolated in vacuoles or stored in leaves, bark, and fruits. The plant may later shed these parts, removing the stored substances from the living plant.</p><span class="plant-link">Human comparison: kidneys remove dissolved wastes from the blood in urine.</span></article>
+        <article class="plant-method-card"><span class="plant-method-number">03</span><h3>Guttation and shedding</h3><p>Some plants release liquid droplets through hydathodes at leaf edges, a process called guttation. Wastes may also be stored in leaves, bark, or fruits and removed when these parts are shed.</p><span class="plant-link">Human comparison: the body removes wastes through urine, exhaled gases, and sweat.</span></article>
+        <article class="plant-method-card"><span class="plant-method-number">04</span><h3>Gas exchange</h3><p>Plants release oxygen as a by-product of photosynthesis. They also release carbon dioxide during cellular respiration. These gases move through stomata and other openings.</p><span class="plant-link">Human comparison: the respiratory system removes carbon dioxide from the body.</span></article>
+      </div>
+      <div class="plant-takeaway"><strong>Remember:</strong> humans have specialized excretory organs, while plants manage wastes through diffusion, storage, shedding, and secretion. Both strategies help organisms maintain internal balance.</div>
+    </section>
+
+    <section class="content-section section-wrap" id="simulator">
+      <div class="section-heading">
+        <div><div class="eyebrow">05 / PATHWAY SIMULATOR</div><h2>Change the condition.<br><em>Follow the pathway.</em></h2></div>
+        <p>Compare normal function with selected conditions. Each pathway is a simplified learning model, not a diagnostic tool.</p>
+      </div>
+      <div class="simulator-card">
+        <div class="sim-controls">
+          <div class="eyebrow">SELECT A CONDITION</div>
+          <button class="condition-button active" data-condition="normal"><span class="condition-number">01</span><span><strong>Normal function</strong><small>Urine formation and flow</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="uti"><span class="condition-number">02</span><span><strong>Urinary tract infection</strong><small>Infection in the urinary tract</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="cystitis"><span class="condition-number">03</span><span><strong>Cystitis</strong><small>Bladder inflammation</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="pyelo"><span class="condition-number">04</span><span><strong>Pyelonephritis</strong><small>Kidney infection</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="ckd"><span class="condition-number">05</span><span><strong>Chronic kidney disease</strong><small>Long-term loss of function</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="aki"><span class="condition-number">06</span><span><strong>Acute kidney injury</strong><small>Sudden decline in function</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="stones"><span class="condition-number">07</span><span><strong>Kidney stones</strong><small>Mineral deposits may block a ureter</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="glomerulo"><span class="condition-number">08</span><span><strong>Glomerulonephritis</strong><small>Inflammation of kidney filters</small></span><b>→</b></button>
+          <button class="condition-button" data-condition="retention"><span class="condition-number">09</span><span><strong>Urinary retention</strong><small>Difficulty emptying the bladder</small></span><b>→</b></button>
+          <div class="sim-system-toggle"><label for="simSystem">Pathway focus</label><select id="simSystem"><option value="urinary">Urinary system</option><option value="sweat">Sweat and water balance</option></select></div>
+        </div>
+        <div class="sim-display">
+          <div class="sim-display-top"><span class="eyebrow" id="simEyebrow">NORMAL PATHWAY</span><span class="sim-state" id="simState">FUNCTIONING</span></div>
+          <div class="sim-visual">
+            <svg id="simSvg" viewBox="0 0 560 380" role="img" aria-label="Anterior body outline with kidneys in the upper abdomen, ureters, and bladder in the pelvis">
+              <circle class="torso-head" cx="220" cy="28" r="22"/>
+              <path class="torso-outline" d="M190 57 C160 59 137 72 122 94 L82 184 Q75 201 89 209 Q103 216 111 199 L140 129 L145 230 C147 255 162 273 184 284 L184 347 Q184 363 198 363 Q212 363 213 347 L220 292 L227 347 Q228 363 242 363 Q256 363 256 347 L256 284 C278 273 293 255 295 230 L300 129 L329 199 Q337 216 351 209 Q365 201 358 184 L318 94 C303 72 280 59 250 57Z"/>
+              <g id="simUrinary" transform="translate(66 66) scale(.7)">
+                <defs>
+                  <linearGradient id="renalShell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8a0a0"/><stop offset=".48" stop-color="#b95b72"/><stop offset="1" stop-color="#71364f"/></linearGradient>
+                  <linearGradient id="renalInner" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1b0a5"/><stop offset="1" stop-color="#8e405d"/></linearGradient>
+                </defs>
+                <g class="sim-kidney-group left-kidney">
+                  <path class="sim-kidney" d="M188 133 C171 121 153 133 152 154 C151 176 163 194 180 191 C193 189 199 177 195 166 C192 158 184 155 188 146 C192 139 196 136 188 133Z"/>
+                  <path class="kidney-cortex" d="M184 138 C169 130 158 141 158 157 C158 174 167 186 179 183 C188 181 190 173 186 165 C181 156 179 149 184 138Z"/>
+                  <path class="kidney-medulla" d="M163 148 Q174 149 178 162 Q170 166 165 158Z M174 139 Q185 145 185 157 Q178 159 174 150Z M164 166 Q176 168 179 180 Q169 181 164 172Z"/>
+                  <path class="renal-pelvis" d="M188 158 Q201 164 207 176 Q197 179 188 169"/>
+                </g>
+                <g class="sim-kidney-group right-kidney">
+                  <path class="sim-kidney" d="M252 133 C269 121 287 133 288 154 C289 176 277 194 260 191 C247 189 241 177 245 166 C248 158 256 155 252 146 C248 139 244 136 252 133Z"/>
+                  <path class="kidney-cortex" d="M256 138 C271 130 282 141 282 157 C282 174 273 186 261 183 C252 181 250 173 254 165 C259 156 261 149 256 138Z"/>
+                  <path class="kidney-medulla" d="M277 148 Q266 149 262 162 Q270 166 275 158Z M266 139 Q255 145 255 157 Q262 159 266 150Z M276 166 Q264 168 261 180 Q271 181 276 172Z"/>
+                  <path class="renal-pelvis" d="M252 158 Q239 164 233 176 Q243 179 252 169"/>
+                </g>
+                <path class="renal-vessels" d="M220 158 H202 M220 158 H238"/>
+                <path class="sim-ureter" d="M205 177 C204 205 210 231 214 264 M235 177 C236 205 230 231 226 264"/>
+                <path class="sim-ureter-inner" d="M205 177 C204 205 210 231 214 264 M235 177 C236 205 230 231 226 264"/>
+                <path class="sim-bladder" d="M220 259 C200 259 191 273 195 294 C198 315 208 326 220 328 C232 326 242 315 245 294 C249 273 240 259 220 259Z"/>
+                <path class="bladder-fluid" d="M198 294 Q220 285 242 294 Q239 316 220 321 Q201 316 198 294Z"/>
+                <path class="sim-urethra" d="M220 327 L220 350"/>
+                <g class="flow-particles"><circle cx="205" cy="203" r="3.5"/><circle cx="232" cy="230" r="3.5"/><circle cx="220" cy="294" r="3.5"/></g>
+                <g id="simProblem"></g>
+              </g>
+              <g id="simSweat" class="hidden">
+                <path d="M95 150 H465" stroke="#e9b98e" stroke-width="34" stroke-linecap="round"/>
+                <path d="M95 192 H465" stroke="#c88f72" stroke-width="48" stroke-linecap="round"/>
+                <path d="M95 250 H465" stroke="#80645e" stroke-width="58" stroke-linecap="round"/>
+                <path d="M95 168 H465" stroke="#f7d7b6" stroke-width="3" stroke-dasharray="5 5"/>
+                <path class="sweat-duct" d="M280 132 V218 Q280 230 264 240 Q238 255 249 282 Q260 307 285 294 Q309 282 294 263 Q284 250 270 263" fill="none" stroke="#58d6e5" stroke-width="8" stroke-linecap="round"/>
+                <path class="sweat-flow" d="M280 132 V88" stroke="#58d6e5" stroke-width="4" stroke-dasharray="7 8" fill="none"/>
+                <circle cx="280" cy="126" r="6" fill="#b9f5fa"/>
+                <text x="105" y="112" class="svg-label">SKIN SURFACE / PORE</text>
+                <text x="105" y="185" class="svg-label">EPIDERMIS</text>
+                <text x="105" y="225" class="svg-label">DERMIS</text>
+                <text x="315" y="300" class="svg-label">COILED SWEAT GLAND</text>
+                <text x="315" y="126" class="svg-label">SWEAT DUCT</text>
+              </g>
+              <g id="simUrinaryLabels">
+                <text x="220" y="116" text-anchor="middle" class="svg-label">KIDNEYS · UPPER ABDOMEN</text>
+                <text x="220" y="374" text-anchor="middle" class="svg-label">URINE EXIT</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sim-explanation">
+            <div><h3 id="simTitle">Normal urine formation</h3><p id="simDescription">The kidneys filter blood, adjust water and electrolyte levels, and produce urine. Urine travels through the urinary tract before leaving the body.</p></div>
+            <div class="steps-list" id="simSteps"></div>
+          </div>
+          <div class="sim-footnote" id="simFootnote">The flow shown is simplified and represents the normal route of urine.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="takeaway-section thank-you-section" id="about">
+      <div class="section-wrap thank-you-inner">
+        <div class="eyebrow">GROUP 5 · BIOLOGY PRESENTATION</div>
+        <h2>THANK <em>YOU!</em></h2>
+        <p>Questions?</p>
+        <div class="thank-you-rule"></div>
+        <span>THE EXCRETORY SYSTEM · SWEAT GLANDS &amp; URINARY ORGANS</span>
+      </div>
+    </section>
+  </main>
+  <div class="slide-dock" id="slideDock" aria-label="Presentation controls">
+    <button type="button" id="previousSlide" aria-label="Previous slide">← PREV</button>
+    <span id="slideCounter">01 / 22</span>
+    <div class="slide-progress"><span id="slideProgress"></span></div>
+    <button type="button" id="nextSlide" aria-label="Next slide">NEXT →</button>
+  </div>
+  <script src="presentation.js?v=4"></script>
+
+  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">E</span><span>EXCRETORY SYSTEM<span class="brand-dot">.</span><small>INTERACTIVE BIOLOGY EXPERIENCE</small></span></a><span>For educational use only · Not a medical diagnostic tool</span></footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
